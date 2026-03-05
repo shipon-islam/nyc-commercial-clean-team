@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-red: #ed0505;
+  --color-skyblue-light: #f4f5f7;
+  --color-slate: #1d2f64;
+  --color-dark-slate: #020303;
+  --font-jetbrains: var(--font-jetbrains-mono);
+  --font-inter: var(--font-inter);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility container {
+  @apply mx-auto max-w-none 2xl:max-w-360 px-4 md:px-10! lg:px-8;
+}
+@layer base {
+  body {
+    @apply font-inter;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-jetbrains  leading-[120%] tracking-[-1%];
+  }
+  button {
+    @apply cursor-pointer;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .heading-1 {
+    @apply text-[40px] md:text-[58px] lg:text-[64px] xl:text-[84px];
+  }
+  .heading-2 {
+    @apply text-[32px] sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+  .heading-3 {
+    @apply text-[32px] sm:text-4xl md:text-[48px];
+  }
+  .heading-4 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-[130%];
+  }
+  .heading-5 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-[32px] leading-[130%];
+  }
+  .heading-6 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-[26px] leading-[140%];
+  }
+  .body-text {
+    @apply text-base md:text-lg lg:text-xl;
+  }
 }
+@custom-variant hover (&:hover);
