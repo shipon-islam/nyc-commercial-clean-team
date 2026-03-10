@@ -1,5 +1,5 @@
 import logo from "@/assets/logos/nyc-logo.png";
-import { companyLinks, followUsLinks, productLinks } from "@/constant/footer";
+import { companyLinks, followUsLinks, servicesLinks } from "@/constant/footer";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,30 +19,29 @@ export default function Footer() {
             />
           </div>
           <p className="py-8 text-lg">
-            Get weekly updates on operational insights and product launches.
+            Stay informed on facility maintenance and cleaning standards.
           </p>
           <div>
             <div className="flex flex-col sm:flex-row gap-5 items-center w-full sm:w-[85%] md:w-[70%] lg:w-full">
               <input
                 type="email"
                 placeholder="Your email"
-                className="text-lg border-b border-gray-300  py-2 w-full focus:outline-none"
+                className=" border border-gray-300 text-white placeholder:text-white py-2 w-full rounded-full pl-6 focus:outline-none"
               />
-              <button className="w-full sm:w-fit flex justify-center">
+              <button className="w-full sm:w-fit flex items-center justify-center shadow shadow-[#F4F5F7] h-10 px-6 rounded-full hover:shadow-lg transistion-transform duration-300">
                 Subscribe
               </button>
             </div>
             <p className="mt-3 text-xs">
-              By subscribing you agree to our Privacy Policy and consent to
-              receive updates from OpsForAI.
+             We respect your privacy and send updates only when necessary.
             </p>{" "}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-x-5 lg:gap-x-10 gap-y-10 md:grid-cols-3 mt-12 lg:mt-0">
           <div>
-            <p className="text-lg font-semibold">Product</p>
+            <p className="text-lg font-semibold">Services</p>
             <ul className="mt-4 space-y-3.5">
-              {productLinks.map((link) => (
+              {servicesLinks.map((link) => (
                 <li key={link.id}>
                   <a
                     className=" text-light hover:underline hover:text-blue-500"
@@ -91,7 +90,7 @@ export default function Footer() {
         <hr className=" text-gray-300 my-8" />
         <div className="flex flex-col-reverse md:flex-row gap-y-6 justify-between md:items-center ">
           <p className="text-center text-light">
-            © 2025 OpsForAI. All rights reserved.
+            © 2025 NYC Clean Team. All rights reserved.
           </p>
           <div className="flex flex-col md:flex-row gap-4">
             <Link href="#" className="text-light underline hover:text-blue-500">

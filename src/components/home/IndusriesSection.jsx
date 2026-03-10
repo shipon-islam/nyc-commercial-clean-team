@@ -32,7 +32,7 @@ export default function IndusriesSection() {
                 alt={blog.title}
                 width={581}
                 height={253}
-                className={`rounded-3xl object-cover w-full max-h-63.25`}
+                className={`rounded-3xl object-cover w-full h-full max-h-63.25`}
               />
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function IndusriesSection() {
                   alt={blog.title}
                   width={304}
                   height={171}
-                  className={`rounded-3xl object-cover w-full max-h-42.75`}
+                  className={`rounded-3xl object-cover w-full h-42.75`}
                 />
               </div>
             </div>

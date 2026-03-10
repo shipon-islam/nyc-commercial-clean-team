@@ -79,10 +79,11 @@ export default function Header() {
                     })}
                    
                 </div>
-                <div className="absolute top-1/2 left-1/2 -translate-1/2">
+                <Link href="/" className="absolute top-1/2 left-1/2 -translate-1/2">
                     <Image src={logo} alt="Logo" width={77} height={64} />
-                </div>
-                <ButtonSolid size="small">Menu</ButtonSolid>               
+                </Link>
+                <ButtonSolid className="lg:hidden" size="small">Quote</ButtonSolid>               
+                <ButtonSolid className="hidden lg:block" size="small">Menu</ButtonSolid>               
                
                 
             </nav>

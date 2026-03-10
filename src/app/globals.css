@@ -31,16 +31,16 @@
 }
 @layer components {
   .heading-1 {
-    @apply text-[40px] md:text-[58px] lg:text-[64px] xl:text-[84px];
+    @apply text-[40px] md:text-[56px];
   }
   .heading-2 {
-    @apply text-[32px] sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply text-[36px] sm:text-[40px] md:text-5xl;
   }
   .heading-3 {
-    @apply text-[32px] sm:text-4xl md:text-[48px];
+    @apply text-[32px] sm:text-4xl md:text-[40px];
   }
   .heading-4 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-[130%];
+    @apply text-2xl sm:text-2xl md:text-[32px]  leading-[130%];
   }
   .heading-5 {
     @apply text-xl md:text-2xl leading-[140%];

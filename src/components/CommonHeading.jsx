@@ -1,8 +1,8 @@
-
-export default function CommonHeading({title,heading,subHeading,className}) {
+"use client"
+export default function CommonHeading({title,heading,subHeading,center,className}) {
   return (
-    <div className={className}>
-      <p className="font-semibold text-red border px-4.5 py-1 w-fit rounded-full">
+    <div className={`${center&&"text-center max-w-3xl mx-auto"} ${className}`}>
+      <p className={`font-semibold text-red border px-4.5 py-1 w-fit rounded-full ${center&&"mx-auto w-fit"}`}>
         {title}
       </p>
       <h2 className="heading-2 py-4 pb-6">{heading}</h2>

@@ -24,13 +24,13 @@ export default function BlogCard({ blog, isClean }) {
           />
         )}
       </div>
-      <div className="mt-4.5">
+      <div className="mt-4.5 overflow-hidden rounded-3xl">
         <Image
           src={blog.image}
           alt={blog.title}
           width={474}
           height={316}
-          className={`rounded-3xl object-cover ${isClean ? "w-full" : "max-w-92.75 mx-auto"}`}
+          className={`rounded-3xl object-cover w-full group-hover:scale-110 transition-all duration-300 ${isClean ? "max-h-79" : "max-h-61.75"}`}
         />
       </div>
     </div>

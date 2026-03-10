@@ -1,21 +1,26 @@
 export const headerLinks = [
   {
-    id: 1,
-    name: "Home",
-    href: "/",
-  },
-  {
     id: 2,
     name: "Services",
     href: "/services",
   },
   {
     id: 3,
+    name: "Blog",
+    href: "/blogs",
+  },
+  {
+    id: 4,
     name: "About",
     href: "/about",
   },
   {
-    id: 4,
+    id: 5,
+    name: "Contact",
+    href: "/contact",
+  },
+  {
+    id: 6,
     name: "Locations",
     href: "/locations",
     dropdownList: [

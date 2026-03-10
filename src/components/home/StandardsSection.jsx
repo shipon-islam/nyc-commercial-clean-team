@@ -38,7 +38,7 @@ export default function StandardsSection() {
             <div className="grid grid-cols-3 gap-8">
               {ourStandards.map((item) => (
                 <div key={item.id}>
-                  <div className="max-w-79.5 mx-auto">
+                  <div className="max-w-79.5 mx-auto text-center">
                     <div className={` p-3 w-fit mx-auto rounded-xl border ${step===item.id?"bg-gray-400 border-black":"bg-skyblue-light  border-skyblue-light"}`}>
                       <item.Icon />
                     </div>
