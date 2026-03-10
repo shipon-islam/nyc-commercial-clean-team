@@ -13,7 +13,22 @@ export const supports = [
   {
     id: 2,
     image: handyman,
-    listView: false,
+    title: "Carpet",
+    heading: "Handyman services",
+    desc: "Minor repairs and maintenance handled by trained professionals. Minor repairs and maintenance handled by trained professionals.",
+  },
+  {
+    id: 3,
+    image: handyman,
+
+    title: "Floors",
+    heading: "Handyman services",
+    desc: "Minor repairs and maintenance handled by trained professionals. Minor repairs and maintenance handled by trained professionals.",
+  },
+  {
+    id: 4,
+    image: handyman,
+
     title: "Carpet",
     heading: "Handyman services",
     desc: "Minor repairs and maintenance handled by trained professionals. Minor repairs and maintenance handled by trained professionals.",

@@ -17,7 +17,7 @@ export default async function BlogDetails({ params }) {
               alt="blog"
               width={1252}
               height={538}
-              className="h-134 w-full object-cover rounded-xl"
+              className="h-85 md:h-134 w-full object-cover rounded-xl"
             />
             <div className="size-21.5 bg-[#F78E8E] flex items-center justify-center text-center rounded-xl absolute bottom-0 right-0">
               <h6 className="heading-6">28 Aug</h6>

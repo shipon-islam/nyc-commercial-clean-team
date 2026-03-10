@@ -11,11 +11,19 @@ export default function SurfacesSection() {
         heading="Floors and finishes maintained"
         subHeading="Protect your investment with professional floor care and restoration"
       />
-      <div className="mt-21 grid grid-cols-[2fr_1fr_1fr] gap-8">
-        {surfaces.slice(0, 3).map((item) => (
-          <ServicesBlogCard listView={item.listView} key={item.id} blog={item} />
+      <div className="grid lg:grid-cols-2 gap-8 mt-21">
+        <div className="">
+        {surfaces.slice(0, 1).map((item) => (
+          <ServicesBlogCard view={item.view} key={item.id} blog={item} />
         ))}
       </div>
+      <div className="grid sm:grid-cols-2 gap-8">
+        {surfaces.slice(1, 3).map((item) => (
+          <ServicesBlogCard view={item.view} key={item.id} blog={item} />
+        ))}
+      </div>
+      </div>
+      
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import "swiper/css";
 import "./globals.css";
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",

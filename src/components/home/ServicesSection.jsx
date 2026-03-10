@@ -5,7 +5,7 @@ import CommonHeading from "../CommonHeading";
 export default function ServicesSection() {
   return (
     <section className="container mt-16">
-      <div className="grid grid-cols-2 gap-32">
+      <div className="grid md:grid-cols-2 gap-32">
         <div>
           <CommonHeading
             title="Services"

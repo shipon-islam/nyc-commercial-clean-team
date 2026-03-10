@@ -13,7 +13,7 @@ export default function IndusriesSection() {
           subHeading="Specialized cleaning for every sector across the city."
         />
       </div>
-      <div className="grid grid-cols-[1fr_1.2fr] gap-8 mt-8">
+      <div className="grid md:grid-cols-[1fr_1.2fr] gap-8 mt-8">
         {industries.slice(0, 1).map((blog) => (
           <div
             key={blog.id}
@@ -37,7 +37,7 @@ export default function IndusriesSection() {
             </div>
           </div>
         ))}
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-8">
           {industries.slice(1, industries.length).map((blog) => (
             <div
               key={blog.id}

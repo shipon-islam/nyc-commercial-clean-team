@@ -7,7 +7,7 @@ export const surfaces = [
   {
     id: 1,
     image: floor,
-    listView: true,
+    view: "row",
     title: "Floors",
     heading: "Floor strip and wax",
     desc: "Strip old finish and apply new protective wax coating",
@@ -15,7 +15,7 @@ export const surfaces = [
   {
     id: 2,
     image: carpet,
-    listView: false,
+    view: "row-reverse",
     title: "Carpet",
     heading: "Carpet cleaning",
     desc: "Deep extraction removes embedded dirt and extends carpet life",
@@ -23,7 +23,7 @@ export const surfaces = [
   {
     id: 3,
     image: windowClean,
-    listView: false,
+    view: "row-reverse",
     title: "Specialty",
     heading: "Window cleaning",
     desc: "Crystal clear glass from ground to roofline.",

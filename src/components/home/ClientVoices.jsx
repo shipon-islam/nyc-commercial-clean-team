@@ -49,12 +49,12 @@ export default function ClientVoices() {
               // onSlideChange={() => console.log("slide change")}
               // onSwiper={(swiper) => console.log(swiper)}
               modules={[Autoplay]}
-              
+             
               
             >
         {clientVoices.map((item) => (
-          <SwiperSlide  style={{ height: "100%" }} key={item.id} className="shadow-custom border border-gray-300  p-10 rounded-xl overflow-hidden ">
-          <div >
+          <SwiperSlide  style={{ height: "100%" }} key={item.id} >
+          <div className="shadow-custom border border-gray-300  p-10 rounded-xl  h-full ">
             <div>
               <item.icon/>
             </div>

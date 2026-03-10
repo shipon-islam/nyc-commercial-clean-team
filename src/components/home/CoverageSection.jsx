@@ -1,7 +1,6 @@
 "use client";
 import { coverage } from "@/constant/home/coverage";
 import Image from "next/image";
-import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
@@ -18,19 +17,31 @@ export default function CoverageSection() {
           subHeading="From Manhattan to Long Island, we're your local cleaning partner."
         />
       </div>
-      <div className="mt-8">
+      <div className="mt-20">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={3}
+          breakpoints={{
+                320: {
+                  slidesPerView: 2,
+                  spaceBetween: 25,
+                },
+                
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                
+              }}
           loop={true}
           coverflowEffect={{
             rotate: 0,
-            stretch: 0,
+            stretch:0,
             depth: 500,
             modifier: 1,
-            slideShadows: false,
+            slideShadows: true,
           }}
           pagination={{ clickable: true }}
           modules={[EffectCoverflow, Pagination]}
@@ -41,7 +52,7 @@ export default function CoverageSection() {
               <Image
                 width={500}
                 height={200}
-                className="h-100 object-cover rounded-2xl"
+                className="h-90 object-cover rounded-2xl"
                 src={item}
                 alt="slider"
               />

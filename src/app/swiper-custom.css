@@ -1,10 +1,9 @@
-/* .custom-swiper .swiper-slide {
-  transform: scale(0.8);
-  opacity: 0.8;
-  transition: all 0.4s ease;
+.custom-swiper .swiper-slide {
+  border-radius: 30px !important;
 }
 
 .custom-swiper .swiper-slide-active {
-  transform: scale(1.1);
+  transform: scaleX(1.6) !important;
   opacity: 1;
-} */
+  border-radius: 30px !important;
+}
