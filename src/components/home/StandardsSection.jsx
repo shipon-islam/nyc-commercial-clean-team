@@ -60,7 +60,7 @@ export default function StandardsSection() {
                     <button
                       onMouseOver={() => setStep(item.id)}
                       onMouseOut={() => setStep(0)}
-                      className="bg-white h-13 px-8 rounded-full hover:bg-slate hover:text-white"
+                      className="lg:hidden bg-white h-13 px-8 rounded-full hover:bg-slate hover:text-white"
                     >
                       Step Three
                     </button>
