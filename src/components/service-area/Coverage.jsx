@@ -68,7 +68,7 @@ export default function Coverage() {
               <h4 className="heading-4 capitalize">{step.name}</h4>
               <h4 className="heading-4 font-bold mt-6 mb-8">{step.title}</h4>
               <p className="mb-8">{step.desc}</p>
-              <ButtonSolid size="small">Next</ButtonSolid>
+              <ButtonSolid minWidth="sm:w-28"  >Next</ButtonSolid>
             </div>
             <div>
               <Image src={step.image} alt="image" height={576} width={576} className="w-full h-full max-h-144" />

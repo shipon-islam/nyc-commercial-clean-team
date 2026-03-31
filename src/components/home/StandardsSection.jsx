@@ -47,7 +47,7 @@ export default function StandardsSection() {
               </button>
             </div>
           </div>
-          <div className="lg:mt-28 border border-white rounded-xl p-5 lg:pt-20 lg:pb-30 lg:px-10 relative ">
+          <div className="lg:mt-28 border border-black rounded-xl p-5 lg:pt-20 lg:pb-30 lg:px-10 relative ">
             <div className="grid lg:grid-cols-3 gap-8">
               {ourStandards.map((item) => (
                 <div key={item.id}>
@@ -72,7 +72,7 @@ export default function StandardsSection() {
                 </div>
               ))}
             </div>
-            <div className="hidden max-w-260 w-full  bg-white rounded-full lg:flex justify-between items-center p-1.5 absolute -bottom-8 left-1/2 -translate-x-1/2">
+            <div className="hidden max-w-260 w-full  bg-white border border-black/30 rounded-full lg:flex justify-between items-center p-1.5 absolute -bottom-8 left-1/2 -translate-x-1/2">
               <h6 className="heading-6 text-center w-full flex-1">
                 Elevate Your Space with Professional Cleaning
               </h6>

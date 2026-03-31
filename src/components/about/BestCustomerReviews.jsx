@@ -1,5 +1,11 @@
+"use client";
+import glassClean from "@/assets/home/services/glass-clean.webp";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CommonHeading from "../CommonHeading";
+
 const steps = [
   {
     id: 1,
@@ -32,42 +38,84 @@ export default function BestCustomerReviews() {
         "
         subHeading="Installations and repairs completed successfully."
       />
-      <div className="grid grid-cols-2 border rounded-xl p-5 gap-10">
+      <div className="grid grid-cols-2 border rounded-xl p-5 gap-10 my-10">
         <div className="grid grid-cols-3 gap-4">
-          <div className="bg-[#D9D9D9] h-[160px] rounded-xl"></div>
-          <div className="bg-[#D9D9D9] h-[160px] rounded-xl"></div>
-          <div className="bg-[#D9D9D9] h-[160px] rounded-xl"></div>
-        </div>
-        <div>
-          <div>
-            <div className="flex text-red">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <Icon
-                  key={index}
-                  icon="material-symbols-light:star"
-                  width="24"
-                  height="24"
-                />
-              ))}
-            </div>
-            <span>Rated 3.8</span>
+          <div className="rounded-xl">
+            <Image
+              src={glassClean}
+              alt="d"
+              className="h-full object-cover rounded-xl"
+            />
           </div>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a moreIt is a reader will be
-            distracted by the readable
-          </p>
-          <hr />
-          <div>
-            <h4>Name</h4>
-            <p>Location</p>
+          <div className=" rounded-xl">
+            {" "}
+            <Image
+              src={glassClean}
+              alt="d"
+              className="h-full object-cover rounded-xl"
+            />
+          </div>
+          <div className="rounded-xl">
+            {" "}
+            <Image
+              src={glassClean}
+              alt="d"
+              className="h-full object-cover rounded-xl"
+            />
           </div>
         </div>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          loop={true}
+          autoHeight={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        >
+          {Array.from({ length: 6 }).map((_, id) => (
+            <SwiperSlide key={id} >
+              <div className="max-w-150">
+                <div>
+                  <div className="flex text-red">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <Icon
+                        key={index}
+                        icon="material-symbols-light:star"
+                        width="24"
+                        height="24"
+                      />
+                    ))}
+                  </div>
+                  <span>Rated 5.0</span>
+                </div>
+                <p className="my-4 text-wrap">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a moreIt is a
+                  reader will be distracted by the readable
+                </p>
+                <hr className="my-3" />
+                <div>
+                  <h4>Name</h4>
+                  <p>Location</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div className="border grid grid-cols-4">
         {steps.map((item) => (
-          <div key={item.id} className="border-r flex-col items-center justify-center text-center p-10">
+          <div
+            key={item.id}
+            className="border-r flex-col items-center justify-center text-center p-10"
+          >
             <h1 className="heading-1">{item.score}</h1>
             <p>{item.title}</p>
           </div>

@@ -26,28 +26,6 @@ export const recurrings = [
     heading: "Day porter services",
     desc: "On-site support throughout your business day.",
   },
-  {
-    id: 4,
-    image: windowClean,
-
-    title: "Janitorial",
-    heading: "Janitorial services",
-    desc: "Routine maintenance for lobbies, restrooms, and common areas",
-  },
-  {
-    id: 5,
-    image: officeClean,
-    title: "Core",
-    heading: "Office cleaning",
-    desc: "Professional spaces kept spotless and ready for business.",
-  },
-  {
-    id: 6,
-    image: dayPorter,
-
-    title: "Core",
-    heading: "Day porter services",
-    desc: "On-site support throughout your business day.",
-  },
+  
   
 ];

@@ -7,14 +7,14 @@ export default function WhyChooseUs() {
       <div>
         <CommonHeading
           title="Why Choose Us ?"
-          heading="Redefining Clean for Homes and Businesses
-"
+          heading="Redefining Clean for Homes and Businesses"
           subHeading="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moreIt is a reader will be distracted by the readable"
         />
       </div>
-      <div className="grid grid-cols-[1fr_3fr] mt-20">
-        <div>
-          <div className="mt-6">
+
+      <div className=" mt-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
+          <div>
             <Image
               src={janitorial}
               alt="floor"
@@ -26,15 +26,10 @@ export default function WhyChooseUs() {
             <p className="my-4">
               Installations and repairs completed successfully.{" "}
             </p>
-            <div className="w-[303px] h-[266px] bg-[#D9D9D9] rounded-xl"></div>
           </div>
-        </div>
-        <div className="grid grid-cols-3 grid-rows-2 gap-4">
-            <div className=" min-h-[266px] bg-[#D9D9D9] rounded-xl row-span-2"></div>
-            <div className=" min-h-[266px] bg-[#D9D9D9] rounded-xl"></div>
-            <div className=" min-h-[266px] bg-[#D9D9D9] rounded-xl"></div>
-            
-            <div className=" min-h-[266px] bg-[#D9D9D9] rounded-xl col-span-2"></div>
+          {Array.from({ length: 7 }).map((_, index) => (
+            <div key={index} className="h-66.5 bg-[#D9D9D9] rounded-xl "></div>
+          ))}
         </div>
       </div>
     </section>
