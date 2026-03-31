@@ -64,9 +64,9 @@ export default function ServicesSection() {
                     <ServiceCardIcon />
                   </div>
                   <div>
-                    <div className="h-45 mt-10">
+                    <div className="min-h-48 mt-10">
                       <div className="py-2 rounded-r-xl absolute bg-white w-[85%] z-20">
-                        <h5 className="heading-5 font-bold  my-2">Home Cleaning</h5>
+                        <h5 className="heading-5 font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer">Home Cleaning</h5>
                         <p className="mb-4 ">
                           It is a long established fact that a reader will be
                           distracted by the readable content of a page when
