@@ -5,7 +5,7 @@ export default function CleaningQuote() {
   return (
     <section className="container my-16">
       <div className="border rounded-xl py-5 md:py-12 px-5 grid md:grid-cols-2  md:gap-10 xl:gap-22">
-        <div className="order-2 md:order-1 mt-5 md:mt-0">
+        <div className="order-2 md:order-1 mt-5 md:mt-0 text-center sm:text-left">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px]">Request your free cleaning quote</h1>
           <p className="mt-6 mb-5">
             Let us evaluate your facility and create a customized cleaning plan
@@ -14,7 +14,7 @@ export default function CleaningQuote() {
             a solution that ensures consistent cleanliness and long-term
             efficiency.
           </p>
-          <div className="flex gap-8">
+          <div className="flex gap-8 justify-center sm:justify-start">
             <ButtonSolid>Quote</ButtonSolid>
             <ButtonSolid color="white">Call</ButtonSolid>
           </div>

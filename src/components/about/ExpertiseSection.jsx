@@ -14,20 +14,20 @@ export default function ExpertiseSection() {
           />
       </div>
       
-      <div className="grid lg:grid-cols-[1.4fr_1fr] items-start gap-8 mt-8">
+      <div className="grid lg:grid-cols-[1.2fr_1fr] items-start gap-8 mt-8">
         <div>         
-          <div className="">
+          <div className="relative">
             <Image
               src={janitorial}
               alt="floor"
               width={668}
               height={415}
-              className="rounded-xl w-full max-h-[415px]"
+              className="rounded-t-xl rounded-br-xl w-full max-h-[415px]"
             />
-            <div className="flex items-center gap-4 mt-6">
-              <ArrowButton>Discover More</ArrowButton>
+            <div className="absolute bottom-0 left-0 bg-white px-4 pt-6 flex flex-col-reverse sm:flex-row items-center gap-4 mt-6 rounded-tr-4xl">
+              <ArrowButton >Discover More</ArrowButton>
               <div className="flex items-center gap-4">
-                <h5 className="heading-1">4.8</h5>
+                <h5 className="text-4xl">4.8</h5>
                 <div>
                   <div className="flex text-red">
                     {Array.from({ length: 5 }).map((_, index) => (
@@ -36,17 +36,18 @@ export default function ExpertiseSection() {
                         icon="material-symbols-light:star"
                         width="24"
                         height="24"
+                        className="size-4 md:size-5 lg:size-6"
                       />
                     ))}
                   </div>
-                  <span>base on user reviews</span>
+                  <span className="text-xs sm:text-sm md:text-base">base on user reviews</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-between">
-          <div className="w-65.75 h-104 shadow-sm rounded-xl">
+        <div className="grid grid-cols-2 gap-6 justify-between">
+          <div className="sm:h-104 shadow-sm rounded-xl">
             <div className="h-47.75 rounded-xl flex flex-col items-center justify-center bg-[linear-gradient(114.32deg,#F5FCFF_4.47%,#DBF3FA_25.06%,#B7E9F7_51.47%,#92DFF3_98.36%,#7AD7F0_121.91%)]">
               <h1 className="heading-1 font-bold">98%</h1>
              <span
@@ -55,11 +56,11 @@ export default function ExpertiseSection() {
               <p className="font-medium lg:text-lg">Client retention rate</p>
             </div>
             <div className="h-[191px] flex flex-col items-center justify-center">
-              <p className="font-medium lg:text-lg">Years of Work Experience</p>
-              <h1 className="text-[96px] font-bold text-red">15</h1>
+              <p className="font-medium lg:text-lg text-center">Years of Work Experience</p>
+              <h1 className="text-6xl md:text-7xl lg:text-[96px] font-bold text-red">15</h1>
             </div>
           </div>
-          <div className="w-65.75 h-104 shadow-sm rounded-xl">
+          <div className="sm:h-104 shadow-sm rounded-xl">
             <div className="h-47.75 rounded-xl flex flex-col items-center justify-center bg-[linear-gradient(114.32deg,#F5FCFF_4.47%,#DBF3FA_25.06%,#B7E9F7_51.47%,#92DFF3_98.36%,#7AD7F0_121.91%)]">
               <h1 className="heading-1 font-bold">98%</h1>
              <span
@@ -68,8 +69,8 @@ export default function ExpertiseSection() {
               <p className="font-medium lg:text-lg">Client retention rate</p>
             </div>
             <div className="h-[191px] flex flex-col items-center justify-center">
-              <p className="font-medium lg:text-lg">Years of Work Experience</p>
-              <h1 className="text-[96px] font-bold text-red">15</h1>
+              <p className="font-medium lg:text-lg text-center">Years of Work Experience</p>
+              <h1 className="text-6xl md:text-7xl lg:text-[96px] font-bold text-red">15</h1>
             </div>
           </div>
         </div>

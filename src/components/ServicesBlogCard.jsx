@@ -6,7 +6,7 @@ export default function ServicesBlogCard({ blog, view = "col" }) {
     return (
       <div
         key={blog.id}
-        className={`h-110 mx-1 my-1 bg-white shadow-sm shadow-black/30 rounded-xl group flex `}
+        className={`h-110 mx-1 my-1 bg-white shadow-sm shadow-black/30 rounded-xl group flex flex-col lg:flex-row justify-between`}
       >
         
         <div className="flex items-center justify-between px-7 py-9 basis-[55%]">
