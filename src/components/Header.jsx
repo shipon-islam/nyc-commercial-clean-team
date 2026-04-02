@@ -106,11 +106,9 @@ export default function Header() {
                     );
                   })}
                 </div>
-                <div className="w-fit mx-auto mt-10">
-                  <ButtonSolid className="">
-                    Schedule Service
-                  </ButtonSolid>
-                </div>
+                <Link onClick={() => setIsMenuOpen(!isMenuOpen)} href="/booking" className="w-fit mx-auto mt-10 block">
+                  <ButtonSolid className="">Schedule Service</ButtonSolid>
+                </Link>
               </div>
               <ul className="mt-4 grid grid-cols-5 border-t border-white/40">
                 {followUsLinks.map((link) => (
@@ -131,12 +129,20 @@ export default function Header() {
             href="/"
             className="lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-1/2"
           >
-            <Image src={logo} alt="Logo" width={77} height={64} className="h-auto" />
+            <Image
+              src={logo}
+              alt="Logo"
+              width={77}
+              height={64}
+              className="h-auto"
+            />
+          </Link>
+          <Link href="/booking">
+            <ButtonSolid className="hidden lg:block">
+              Schedule Service
+            </ButtonSolid>
           </Link>
 
-          <ButtonSolid className="hidden lg:block">
-            Schedule Service
-          </ButtonSolid>
           <button
             className="lg:hidden cursor-pointer w-fit block ml-auto"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

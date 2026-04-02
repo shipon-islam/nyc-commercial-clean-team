@@ -23,4 +23,12 @@ export const contactInfoCards = [
     href: null,
     isLink: false,
   },
+  {
+    id: 4,
+    icon: "fa6-solid:clock",
+    label: "Hours",
+    value: "Monday–Friday, 9:00 AM–5:00 PM",
+    href: null,
+    isLink: false,
+  },
 ];

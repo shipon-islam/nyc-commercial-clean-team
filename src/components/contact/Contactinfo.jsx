@@ -20,7 +20,7 @@ export default function ContactInfo() {
                 icon={card.icon}
                 width="24"
                 height="24"
-                className="text-white"
+                className={`text-white ${card.icon=="fa6-solid:clock" ? "w-8 h-8" : "w-6 h-6"}`}
               />
             </div>
 
