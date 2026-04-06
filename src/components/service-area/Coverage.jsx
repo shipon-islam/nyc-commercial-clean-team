@@ -8,28 +8,35 @@ const coverageStep = [
     image: cleanerTool,
     name: "one",
     title: "Long Island",
-    desc: "We walk your facility and assess square footage, surface types, traffic patterns, and current conditions. This informs everything that follows.",
+    desc: "Office parks, retail centers, medical facilities, and commercial properties across Nassau and Suffolk Counties — available for recurring and one-time contracts.",
   },
   {
     id: 2,
     image: cleanerTool,
     name: "two",
-    title: "Long Island",
-    desc: "We walk your facility and assess square footage, surface types, traffic patterns, and current conditions. This informs everything that follows.",
+    title: "Bronx",
+    desc: "Commercial cleaning for offices, schools, retail spaces, and facilities throughout the Bronx — scheduled around your business hours.",
   },
   {
     id: 3,
     image: cleanerTool,
     name: "three",
-    title: "Long Island",
-    desc: "We walk your facility and assess square footage, surface types, traffic patterns, and current conditions. This informs everything that follows.",
+    title: "Queens",
+    desc: "Medical facilities, logistics warehouses, restaurants, and multi-tenant commercial buildings across Long Island City, Flushing, Jamaica, and beyond.",
   },
   {
     id: 4,
     image: cleanerTool,
     name: "four",
-    title: "Long Island",
-    desc: "We walk your facility and assess square footage, surface types, traffic patterns, and current conditions. This informs everything that follows.",
+    title: "Brooklyn",
+    desc: "From DUMBO creative offices to Williamsburg retail to industrial facilities in Sunset Park — professional commercial cleaning across every Brooklyn neighborhood.",
+  },
+  {
+    id: 5,
+    image: cleanerTool,
+    name: "Five",
+    title: "Manhattan",
+    desc: "Office towers, corporate headquarters, law firms, medical practices, and retail — Midtown, Downtown, and everywhere in between.",
   },
 ];
 export default function Coverage() {
@@ -37,8 +44,8 @@ export default function Coverage() {
     <section className="container mt-16">
       <div>
         <CommonHeading
-          title="Coverage"
-          heading="We serve all five boroughs"
+          title="Where We Work"
+          heading="Local Teams Across All Five Boroughs"
           subHeading="NYC Clean Team brings 25+ years of expertise to every facility we service across New York City."
           center={true}
         />

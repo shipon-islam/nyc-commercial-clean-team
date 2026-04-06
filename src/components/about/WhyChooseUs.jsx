@@ -62,25 +62,26 @@ export default function WhyChooseUs() {
       <div className=" mt-20">
         <div className="grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] gap-4">
           <div>
-            <div className="relative">
+            <div className="relative lg:max-w-90 overflow-hidden">
               <Image
                 src={city}
                 alt="hand-with-spay"
                 height={160}
-                className="object-cover w-full"
+                width={500}
+                className="object-cover w-full lg:min-w-150 "
               />
-              <div className="absolute top-1/2 -translate-y-1/2">
+              <div className="absolute top-1/2 -translate-y-1/2 md:top-0 md:translate-y-0">
                 <Image
                   src={handWithSpay}
                   alt="hand-with-spay"
                   width={235}
                   height={235}
-                  className="rounded-full object-cover"
+                  className="rounded-full h-auto w-35 md:w-56 object-cover"
                 />
               </div>
             </div>
-            <div className="lg:mt-20 mb-10 lg:mb-0">
-              <h1 className="text-red heading-1 mt-4">5000+</h1>
+            <div className="mt-5 mb-10 lg:mb-0 text-center lg:text-left">
+              <h1 className="text-red text-5xl md:text-6xl lg:text-[96px] font-medium mt-4">5000+</h1>
               <p className="my-4">
                 Installations and repairs completed successfully.
               </p>

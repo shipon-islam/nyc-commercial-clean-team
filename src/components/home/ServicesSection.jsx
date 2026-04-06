@@ -64,7 +64,7 @@ export default function ServicesSection() {
                     <item.icon className="size-11 sm:size-12 md:size-15"/>
                   </div>
                   <div>
-                    <div className="min-h-48 mt-10">
+                    <div className="min-h-56 xs:min-h-54 sm:min-h-48 mt-10">
                       <div className="py-2 rounded-r-xl absolute bg-white w-[85%] z-20">
                         <h5 className="heading-5 font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer">{item.heading}</h5>
                         <p className="mb-4 text-sm sm:text-base text-justify pr-3">
@@ -73,7 +73,7 @@ export default function ServicesSection() {
                       </div>
                     </div>
 
-                    <ButtonSolid   color="white">Learn more</ButtonSolid>
+                    <ButtonSolid   color="white" className="text-nowrap">Learn more</ButtonSolid>
                   </div>
                 </div>
                 <div className="h-93.75  rounded-xl overflow-hidden">

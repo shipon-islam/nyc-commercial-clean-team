@@ -13,7 +13,7 @@ export default async function BlogDetails({ params }) {
         <div>
           <div className="relative">
             <Image
-              src="/images/blogs/blog.webp"
+              src={blog.image}
               alt="blog"
               width={1252}
               height={538}

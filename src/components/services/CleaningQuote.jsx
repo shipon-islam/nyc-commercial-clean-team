@@ -12,7 +12,7 @@ export default function CleaningQuote() {
 No obligation. 
           </p>
           <div className="flex gap-8 justify-center sm:justify-start">
-            <ButtonSolid>Get a Quote</ButtonSolid>
+            <ButtonSolid>Get a Free Quote</ButtonSolid>
             <ButtonSolid color="white">Call Now</ButtonSolid>
           </div>
         </div>

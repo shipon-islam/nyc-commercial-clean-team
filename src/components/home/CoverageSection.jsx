@@ -59,7 +59,7 @@ export default function CoverageSection() {
               <Image
                 width={500}
                 height={400}
-                className="h-100 object-cover rounded-2xl"
+                className="h-100 object-fill rounded-2xl"
                 src={item}
                 alt="slider"
               />

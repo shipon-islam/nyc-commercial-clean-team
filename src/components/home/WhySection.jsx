@@ -41,9 +41,9 @@ export default function WhySection() {
           {staticstics.map((item) => (
             <div
               key={item.id}
-              className="text-center bg-skyblue-light px-5 sm:px-9 py-4 sm:py-5 rounded-2xl flex flex-col items-center justify-center"
+              className="text-center bg-skyblue-light px-5 sm:px-9 py-4 sm:py-5 rounded-2xl flex flex-col items-center justify-start"
             >
-              <h1 className="text-slate text-[28px] md:text-[64px] font-bold">
+              <h1 className="text-slate text-[28px] md:text-[64px] font-bold pt-2">
                 {item.value}
               </h1>
               <span

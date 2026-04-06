@@ -9,7 +9,7 @@ const serviceStep = [
     id: 1,
     image: cleanerSpy,
     name: "Recurring",
-    title: "Janitorial services gg",
+    title: "Janitorial services",
     desc: "Daily cleaning, restocking, and facility maintenance",
   },
   {
@@ -162,8 +162,8 @@ export default function Available() {
             your business.
           </p>
           <div className="flex gap-8">
-            <ButtonSolid>Quote</ButtonSolid>
-            <ButtonSolid color="white">Call</ButtonSolid>
+            <ButtonSolid>Get a Free Quote</ButtonSolid>
+            <ButtonSolid color="white">Call Now</ButtonSolid>
           </div>
         </div>
       </div>
