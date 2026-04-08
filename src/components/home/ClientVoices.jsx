@@ -53,9 +53,9 @@ export default function ClientVoices() {
         >
           {clientVoices.map((item) => (
             <SwiperSlide style={{ height: "100%" }} key={item.id}>
-              <div className="flex  flex-col justify-between shadow-custom border border-gray-300 p-8 rounded-[20px]  h-92.5 ">
+              <div className="flex  flex-col justify-between  border border-gray-300 p-8 rounded-[20px]  h-92.5 ">
                 <div>
-                  <div>
+                  <div className="relative right-1">
                     <Icon
                       icon="flat-color-icons:google"
                       width="50"

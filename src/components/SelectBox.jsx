@@ -1,11 +1,24 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 export default function SelectBox({ label,required,options,placeholder, error, ...rest }) {
   const dropdownRef = useRef(null);
+    const wrapperRef = useRef(null);
   const [selected, setSelected] = useState("");
+
+   useEffect(() => {
+    function handleClickOutside(e) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+       dropdownRef.current.classList.add("hidden")
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
-    <div>
+    <div ref={wrapperRef}>
       <p>
         {label}
         {required && <span className="text-red-500 pl-0.5">*</span>}
@@ -15,7 +28,7 @@ export default function SelectBox({ label,required,options,placeholder, error, .
           onClick={() => dropdownRef.current.classList.toggle("hidden")}
           className="flex justify-between items-center h-full pr-2 cursor-pointer"
         >
-          <p className="text-light-blue">{selected || (placeholder?placeholder:"Select an option")}</p>
+          <p className="text-light-blue">{selected&&<span className="text-black">{selected}</span> || (placeholder?placeholder:"Select an option")}</p>
           <svg
             width="11"
             height="9"

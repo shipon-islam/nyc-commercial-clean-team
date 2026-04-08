@@ -1,44 +1,42 @@
 
 
-import education from "@/assets/home/industries/education.webp";
-import industriesOffice from "@/assets/home/industries/industries-office.webp";
-import medicalFacilities from "@/assets/home/industries/medical-facilities.webp";
-import restaurants from "@/assets/home/industries/restaurants.webp";
-import retailSpaces from "@/assets/home/industries/retail-spaces.webp";
-
-
 export const industries = [
   {
     id: 1,
-    image: industriesOffice,
+    image: "/images/home/industries/office.webp",
+    slug: "office",
     title: "Office",
     heading: "Office buildings",
     desc: "Corporate environments demand precision and reliability.",
   },
   {
     id: 2,
-    image: restaurants,
+    image: "/images/home/industries/resturants.webp",
+    slug: "food",
     title: "Food",
     heading: "Restaurants",
     desc: "Health-compliant cleaning in every area.",
   },
   {
     id: 3,
-    image: retailSpaces,
+    image: "/images/home/industries/retails.webp",
+    slug: "retail",
     title: "Retail",
     heading: "Retail spaces",
     desc: "Your storefront maintained to brand standards.",
   },
   {
     id: 4,
-    image: medicalFacilities,
+    image: "/images/home/industries/medical.webp",
+    slug: "medical",
     title: "Medical",
     heading: "Medical facilities",
     desc: "Trained staff ensure infection-free spaces.",
   },
   {
     id: 5,
-    image: education,
+    image: "/images/home/industries/education.webp",
+    slug: "education",
     title: "Education",
     heading: "Schools & Campuses",
     desc: "Consistently safe classrooms for every student.",

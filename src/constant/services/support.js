@@ -1,10 +1,9 @@
-import handyman from "@/assets/services/support/handyman.webp";
-
 
 export const supports = [
   {
     id: 1,
-    image: handyman,
+    slug: "handyman-services",
+    image: "/images/services/support/handyman-service.webp",
     listView: true,
     title: "",
     heading: "Handyman services",
@@ -12,12 +11,10 @@ export const supports = [
   },
   {
     id: 2,
-    image: handyman,
+    slug: "restroom-supply-management",
+    image: "/images/services/support/supply-management.webp",
     title: "",
     heading: "Restroom Supply Management",
     desc: "Paper towels, soap, liners, and restroom consumables restocked as part of your service plan — tracked, replenished, and never running out.",
   },
-  
-  
-  
 ];

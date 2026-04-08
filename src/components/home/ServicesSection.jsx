@@ -1,6 +1,7 @@
 import glassClean from "@/assets/home/services/glass-clean.webp";
 import { services } from "@/constant/home/services";
 import Image from "next/image";
+import Link from "next/link";
 import ButtonSolid from "../ButtonSolid";
 import CommonHeading from "../CommonHeading";
 import { GreenSignIcon } from "../Icon";
@@ -38,7 +39,7 @@ export default function ServicesSection() {
                 <div className="flex items-center gap-2">
                   <GreenSignIcon />
                   <h6 className="sm:text-lg md:text-xl font-medium text-gray-800">
-                   Certified Staff
+                    Certified Staff
                   </h6>
                 </div>
               </div>
@@ -61,27 +62,31 @@ export default function ServicesSection() {
               >
                 <div>
                   <div className="bg-[#FCD9D9] w-fit p-2.5 rounded-xl group-hover:-scale-x-100">
-                    <item.icon className="size-11 sm:size-12 md:size-15"/>
+                    <item.icon className="size-11 sm:size-12 md:size-15" />
                   </div>
                   <div>
                     <div className="min-h-56 xs:min-h-54 sm:min-h-48 mt-10">
                       <div className="py-2 rounded-r-xl absolute bg-white w-[85%] z-20">
-                        <h5 className="heading-5 font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer">{item.heading}</h5>
-                        <p className="mb-4 text-sm sm:text-base text-justify pr-3">
-                         {item.desc}
+                        <h5 className="heading-5 font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer">
+                          {item.heading}
+                        </h5>
+                        <p className="mb-4 text-xs xs:text-sm sm:text-base lg:text-sm xl:text-base text-justify pr-3">
+                          {item.desc}
                         </p>
                       </div>
                     </div>
-
-                    <ButtonSolid   color="white" className="text-nowrap">Learn more</ButtonSolid>
+                    <Link href={`/services/${item.slug}`}>
+                      <ButtonSolid color="white" className="text-nowrap">
+                        Learn more
+                      </ButtonSolid>
+                    </Link>
                   </div>
                 </div>
                 <div className="h-93.75  rounded-xl overflow-hidden">
-                  
                   <Image
                     height={216}
                     width={553}
-                    src={glassClean}
+                    src={item.image}
                     alt="glass-clean"
                     className="w-full h-full rounded-lg object-cover group-hover:scale-110 transition-all duration-300"
                   />

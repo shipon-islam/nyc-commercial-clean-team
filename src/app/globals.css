@@ -10,7 +10,7 @@
   --font-jetbrains: var(--font-jetbrains-mono);
   --font-inter: var(--font-inter);
   --shadow-custom: 7px 7px 24.4px 0px #00000030;
-  --breakpoint-xs: 350px;
+  --breakpoint-xs: 380px;
 }
 @utility container {
   @apply mx-auto max-w-none 2xl:max-w-360 px-4 md:px-10! lg:px-8;

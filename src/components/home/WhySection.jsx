@@ -1,24 +1,30 @@
 import ArrowButton from "../ArrowButton";
 import CommonHeading from "../CommonHeading";
+import Counter from "../Counter";
+
 const staticstics = [
   {
     id: 1,
-    value: "98%",
+    value: 98,
+    sign:"%",
     title: "Client retention rate",
   },
   {
     id: 2,
-    value: "25+",
+    value: 25,
+    sign:"+",
     title: "Years of combined experience",
   },
   {
     id: 3,
-    value: "100%",
+    value: 100,
+    sign:"%",
     title: "Insured and background-checked",
   },
   {
     id: 4,
     value: "24/7",
+    sign:"",
     title: "Responsive supportate",
   },
 ];
@@ -43,9 +49,9 @@ export default function WhySection() {
               key={item.id}
               className="text-center bg-skyblue-light px-5 sm:px-9 py-4 sm:py-5 rounded-2xl flex flex-col items-center justify-start"
             >
-              <h1 className="text-slate text-[28px] md:text-[64px] font-bold pt-2">
-                {item.value}
-              </h1>
+              {item.id<4?<Counter value={item.value} sign={item.sign}/>: <div className="flex items-center text-slate text-[28px] md:text-[64px] font-bold pt-2"><Counter value={typeof(item.value)==="string"?item.value.split("/")[0]:item.value} sign={item.sign}/>/<Counter value={typeof(item.value)==="string"?item.value.split("/")[1]:item.value} sign={item.sign}/></div>}
+            
+            
               <span
                 className="w-full bg-black rounded-full border border-transparent [border-image:linear-gradient(90deg,#FFFFFF_-4.54%,rgba(23,38,80,0.46)_46.64%,#FFFFFF_108.06%)_1]"
               ></span>

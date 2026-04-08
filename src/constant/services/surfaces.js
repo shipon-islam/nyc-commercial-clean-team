@@ -1,12 +1,10 @@
-import carpet from "@/assets/services/support/carpet.webp";
-import floor from "@/assets/services/support/floor.webp";
 
-import windowClean from "@/assets/home/services/window-cleaning.webp";
 
 export const surfaces = [
   {
     id: 1,
-    image: floor,
+    slug:"floor-strip-and-wax",
+    image: "/images/services/surface/floors.webp",
     view: "row",
     title: "Floors",
     heading: "Floor strip and wax",
@@ -14,7 +12,8 @@ export const surfaces = [
   },
   {
     id: 2,
-    image: carpet,
+    slug:"carpet-cleaning",
+    image: "/images/services/surface/carpet.webp",
     view: "row-reverse",
     title: "Carpet",
     heading: "Carpet cleaning",
@@ -22,7 +21,8 @@ export const surfaces = [
   },
   {
     id: 3,
-    image: windowClean,
+    slug:"window-cleaning",
+    image: "/images/services/surface/glass.webp",
     view: "row-reverse",
     title: "Glass",
     heading: "Window cleaning",

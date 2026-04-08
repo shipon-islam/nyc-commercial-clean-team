@@ -1,7 +1,7 @@
 import Image from "next/image";
 import LinkWithArrow from "./LinkWithArrow";
 
-export default function ServicesBlogCard({ blog, view = "col" }) {
+export default function ServicesBlogCard({ blog, view = "col",href="" }) {
   if (view == "row") {
     return (
       <div
@@ -14,7 +14,7 @@ export default function ServicesBlogCard({ blog, view = "col" }) {
             <p className="font-semibold">{blog.title}</p>
             <h5 className="heading-5">{blog.heading}</h5>
             <p className="text-justify">{blog.desc}</p>
-            <LinkWithArrow href={`/blogs/${blog.id}`}>learn more</LinkWithArrow>
+            <LinkWithArrow href={href}>learn more</LinkWithArrow>
           </div>
         </div>
         <div className=" overflow-hidden rounded-xl basis-[60%]">
@@ -41,7 +41,7 @@ export default function ServicesBlogCard({ blog, view = "col" }) {
             <p className="font-semibold">{blog.title}</p>
             <h5 className="heading-5">{blog.heading}</h5>
             <p className="text-justify">{blog.desc}</p>
-            <LinkWithArrow href={`/blogs/${blog.id}`}>learn more</LinkWithArrow>
+            <LinkWithArrow href={href}>learn more</LinkWithArrow>
           </div>
         </div>
         <div className=" overflow-hidden rounded-xl">
@@ -75,7 +75,7 @@ export default function ServicesBlogCard({ blog, view = "col" }) {
           <p className="font-semibold">{blog.title}</p>
           <h5 className="heading-5 whitespace-pre-line">{blog.heading}</h5>
           <p className="text-justify">{blog.desc}</p>
-          <LinkWithArrow href={`/blogs/${blog.id}`}>learn more</LinkWithArrow>
+          <LinkWithArrow href={href}>learn more</LinkWithArrow>
         </div>
       </div>
     </div>

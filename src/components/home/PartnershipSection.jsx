@@ -19,19 +19,19 @@ export default function PartnershipSection() {
     },
     {
       id: 2,
-      image: "/images/partnership/coverage-1.jpg",
+      image: "/images/partnership/businesspeople-standing-city-street-shaking-hands.webp",
       title: "The Same Crew, Every Visit",
       desc: "Our staff are background-checked, uniformed, and trained in commercial protocols. You'll see the same faces — not a new team every week.",
     },
     {
       id: 3,
-      image: "/images/partnership/coverage-2.jpg",
+      image: "/images/partnership/discussing-business-chart.webp",
       title: "Consistent Quality, Verified",
       desc: "We use standardized checklists and supervisory checks on every visit. The first service and the twentieth meet the same standard.",
     },
     {
       id: 4,
-      image: "/images/partnership/coverage-2.jpg",
+      image: "/images/partnership/outlines-two-business-people-shaking-hands-celebrate-win-win-deal.webp",
       title: "Quality inspections",
       desc: "Regular audits ensure standards are met consistently across every visit.",
     },
@@ -111,7 +111,7 @@ export default function PartnershipSection() {
             </p>
           </div>
 
-          <div className="relative min-h-15 md:min-h-30 mt-8">
+          <div className="relative min-h-14 md:min-h-30 mt-6 sm:mt-8 mb-10">
             {sliderItems.map((item, i) => (
               <div
                 key={item.id}

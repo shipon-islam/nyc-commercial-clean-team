@@ -74,22 +74,22 @@ export default function BookingForm() {
               label="Facility Size (sq ft) "
               id="facilitySize"
               placeholder="Select Size"
-              required
+            
               options={facilitySizeOptions}
             />
             <InputBox
               min="0"
               type="number"
-              label="Number of Employees"
-              id="employees"
+              label="Number of Floors"
+              id="floors"
               placeholder="1"
-              required
+             
             />
             <SelectBox
               label="Number of Employees "
               id="employees"
               placeholder="Select Range"
-              required
+            
               options={employeesOptions}
             />
           </div>

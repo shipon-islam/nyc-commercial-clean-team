@@ -49,7 +49,7 @@ export default function SpecialitySection() {
         >
           {speciality.map((item, id) => (
             <SwiperSlide key={id}>
-              <ServicesBlogCard key={item.id} blog={item} />
+              <ServicesBlogCard key={item.id} blog={item} href={`/services/specialty/${item.slug}`}/>
             </SwiperSlide>
           ))}
         </Swiper>

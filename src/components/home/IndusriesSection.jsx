@@ -23,7 +23,10 @@ export default function IndusriesSection() {
               <p className="font-semibold">{blog.title}</p>
               <h5 className="heading-5">{blog.heading}</h5>
               <p>{blog.desc}</p>
-              <LinkWithArrow>learn more</LinkWithArrow>
+
+              <LinkWithArrow href={`/industries/${blog.slug}`}>
+                learn more
+              </LinkWithArrow>
             </div>
 
             <div className="mt-4.5">
@@ -32,7 +35,7 @@ export default function IndusriesSection() {
                 alt={blog.title}
                 width={581}
                 height={253}
-                className={`rounded-3xl object-cover w-full h-full max-h-63.25`}
+                className={`rounded-3xl object-cover w-full h-full max-h-100.25`}
               />
             </div>
           </div>
@@ -47,7 +50,10 @@ export default function IndusriesSection() {
                 <p className="font-semibold">{industy.title}</p>
                 <h5 className="heading-5">{industy.heading}</h5>
                 <p>{industy.desc}</p>
-                <LinkWithArrow>learn more</LinkWithArrow>
+
+                <LinkWithArrow href={`/industries/${industy.slug}`}>
+                  learn more
+                </LinkWithArrow>
               </div>
 
               <div className="mt-4.5">

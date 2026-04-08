@@ -33,7 +33,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50  bg-slate rounded-b-[20px] text-white lg:py-2 ${!isMenuOpen ? "bg-slate" : "bg-white lg:bg-slate"} ${
         scrolled
-          ? "lg:opacity-0 lg:-translate-y-full opacity-100 translate-y-0 transition-transform duration-300"
+          ? "opacity-0 -translate-y-full   transition-transform duration-300"
           : "opacity-100 translate-y-0 transition-transform duration-300"
       }`}
     >
