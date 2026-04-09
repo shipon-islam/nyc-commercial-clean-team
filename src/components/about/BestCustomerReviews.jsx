@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CommonHeading from "../CommonHeading";
+import Counter from "../Counter";
 import { QoateIcon } from "../Icon";
 const reviews = [
   {
@@ -39,25 +40,29 @@ const reviews = [
 const steps = [
   {
     id: 1,
-    score: "500+",
+    score: 500,
+    sign:"+",
     title: "Facilities\nServiced",
     image: glassClean,
   },
   {
     id: 2,
-    score: "5",
+    score: 5,
+    sign:"",
     title: "NYC\nBoroughs Covered",
     image: glassClean,
   },
   {
     id: 3,
-    score: "98%",
+    score: 98,
+    sign:"%",
     title: "Client\nRetention Rate",
     image: glassClean,
   },
   {
     id: 4,
-    score: "15+",
+    score: 15,
+    sign:"+",
     title: "Years\nof Experience",
     image: glassClean,
   },
@@ -135,9 +140,8 @@ export default function BestCustomerReviews() {
             key={item.id}
             className={` flex-col items-center justify-center text-center p-10 ${steps.length - 1 === id ? "" : " border-r border-b md:border-b-0"}`}
           >
-            <h1 className="text-4xl sm:text-4xl lg:text-5xl xl:text-7xl whitespace-pre-wrap">
-              {item.score}
-            </h1>
+          <Counter value={item.score} sign={item.sign} className="text-4xl sm:text-4xl lg:text-5xl xl:text-7xl whitespace-pre-wrap"/>
+          
             <p>{item.title}</p>
           </div>
         ))}
