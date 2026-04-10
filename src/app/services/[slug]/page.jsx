@@ -1,9 +1,11 @@
 import CleaningQuote from "@/components/services/CleaningQuote";
 import { services } from "@/constant/home/services";
+import { details } from "@/constant/services";
 import Image from "next/image";
 export default async function ServicesDetails({params}) {
   const {slug}=await params
   const service=services.find(service=>service.slug===slug)
+  const detail=details.find(service=>service.slug===slug)
   return (
     <main>
       <section className="container  mt-8 sm:mt-16">
@@ -14,11 +16,34 @@ export default async function ServicesDetails({params}) {
           >
             Services
           </p>
-          <h4 className="text-2xl sm:text-3xl lg:text-[32px] mt-8">{service.heading}</h4>
-          <p className="text-base sm:text-lg mt-6">{service.desc}</p>
+          <h4 className="text-2xl sm:text-3xl lg:text-[32px] mt-8">{detail.heading}</h4>
+          <p className="text-base sm:text-lg mt-6">{detail.desc}</p>
+          <div className="mt-8">
+            <h3 className="font-bold text-lg">{detail.serviceIncludes.heading}</h3>
+            <p className="mt-4 font-medium">{detail.serviceIncludes.listHeading}</p>
+            <ul className="mt-2 list-disc ml-6">
+              {detail.serviceIncludes.list.map((item,id)=><li key={id}>{item}</li>)}
+            </ul>
+            <p className="mt-4">{detail.serviceIncludes.desc}</p>
           </div>
-          <div>
+          
+          </div>
+          <div className="md:mt-17">
             <Image src={service.image} alt="detail-image" width={576} height={576} className="h-144 rounded-[20px] object-cover"/>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
+          <div className="mt-4">
+            <h3 className="font-bold text-lg">{detail.WhoThisService.heading}</h3>
+            <p className="mt-4 ">{detail.WhoThisService.desc}</p>           
+          </div>
+          <div className="mt-4">
+            <h3 className="font-bold text-lg">{detail.whyThisService.heading}</h3>
+            <p className="mt-4 ">{detail.whyThisService.desc}</p>           
+          </div>
+          <div className="mt-4">
+            <h3 className="font-bold text-lg">{detail.whyChoose.heading}</h3>
+            <p className="mt-4 ">{detail.whyChoose.desc}</p>           
           </div>
         </div>
       </section>

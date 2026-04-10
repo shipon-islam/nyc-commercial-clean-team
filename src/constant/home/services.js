@@ -7,6 +7,7 @@ export const services = [
     slug: "office-cleaning",
     heading: "Office cleaning",
     desc: "Workspaces, restrooms, breakrooms, and common areas are thoroughly cleaned and prepared before your team arrives, ensuring every scheduled visit delivers a consistent, spotless, and professional environment without disruption.",
+    
   },
   {
     id: 2,

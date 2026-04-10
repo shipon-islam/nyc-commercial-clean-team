@@ -1,4 +1,4 @@
-import cleaningImg from "@/assets/home/partnership/cleaning-discussion.webp";
+import cleaningImg from "@/assets/serviceArea/floor-smoke-clean.webp";
 import { CycleCircleIcon, GridIcon, ThreeDotIcon } from "@/components/Icon";
 export const foundations = [
   {
@@ -23,6 +23,7 @@ export const availableSteps = [
   {
     id: 4,
     slug:"office-cleaning",
+    image: "/images/services/recurring/office-meet.png",
     icon: ThreeDotIcon,
     title: "Office cleaning",
     desc: "Comprehensive cleaning for corporate and professional spaces",
@@ -30,8 +31,8 @@ export const availableSteps = [
   {
     id: 2,
     slug:"day-porter-services",
-    icon: CycleCircleIcon,
-   
+    image: "/images/services/recurring/wall-cleaning.jpg",
+    icon: CycleCircleIcon,   
     title: "Day porter services",
     desc: "On-site support during business hours for immediate needs",
   },
@@ -45,17 +46,16 @@ export const availableSteps = [
   },
   {
     id: 3,
-    slug:"floor-and-carpet-care",
+    slug:"carpet-cleaning",
     image: "/images/service-area/carpet.webp",
     name: "Surfaces",
     title: "Floor and carpet care",
     desc: "Stripping, waxing, and deep cleaning for all floor types.",
-  },
-  
-  
+  },  
   {
     id: 6,
     slug:"window-cleaning",
+    image: "/images/services/surface/glass.webp",
     icon: GridIcon,
     title: "Window cleaning",
     desc: "Professional glass and facade maintenance for high-rises",

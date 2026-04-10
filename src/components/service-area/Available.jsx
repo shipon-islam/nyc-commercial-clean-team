@@ -6,7 +6,7 @@ import LinkWithArrow from "../LinkWithArrow";
 
 export default function Available() {
   return (
-    <section className="container mt-8 sm:mt-16">
+    <section className="container mt-8 xs:mt-14 sm:mt-24">
       <div>
         <CommonHeading
           title="Available"
@@ -22,7 +22,7 @@ export default function Available() {
             key={service.id}
             className={`shadow rounded-lg overflow-hidden`}
           >
-            {service.image && (
+            {!service.icon &&(
               <div>
                 <Image
                   width={394}
@@ -52,7 +52,7 @@ export default function Available() {
             key={service.id}
             className={`shadow rounded-lg overflow-hidden`}
           >
-            {service.image && (
+            {!service.icon && (
               <div>
                 <Image
                   width={394}
@@ -82,7 +82,7 @@ export default function Available() {
             key={service.id}
             className={`shadow rounded-lg overflow-hidden`}
           >
-            {service.image && (
+            {!service.icon && (
               <div>
                 <Image
                   width={394}
