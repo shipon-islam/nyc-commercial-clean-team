@@ -9,7 +9,7 @@ export default async function DashboardLayout({ children }) {
   const token = nextCookies.get("token")?.value;
   const isAdmin = await verifyToken(token);
   if (!isAdmin) {
-    redirect("/");
+    redirect("/login");
   }
 
   return (

@@ -54,20 +54,22 @@ export default function StandardsSection() {
                 <div key={item.id}>
                   <div className="lg:max-w-79.5 mx-auto lg:text-center">
                     <div className="flex justify-between items-center">
-                    <div
-                      className={` p-2 md:p-3 w-fit lg:mx-auto rounded-xl border ${step === item.id ? "bg-gray-400 border-black" : "bg-skyblue-light  border-skyblue-light"}`}
-                    >
-                      <item.Icon className="size-8"/>
+                      <div
+                        className={` p-2 md:p-3 w-fit lg:mx-auto rounded-xl border ${step === item.id ? "bg-gray-400 border-black" : "bg-skyblue-light  border-skyblue-light"}`}
+                      >
+                        <item.Icon className="size-8" />
+                      </div>
+                      <button
+                        onMouseOver={() => setStep(item.id)}
+                        onMouseOut={() => setStep(0)}
+                        className="text-sm md:text-base lg:hidden bg-white h-10 md:h-13 px-5 md:px-8 rounded-full hover:bg-slate hover:text-white"
+                      >
+                        {item.stepName}
+                      </button>
                     </div>
-                    <button
-                      onMouseOver={() => setStep(item.id)}
-                      onMouseOut={() => setStep(0)}
-                      className="text-sm md:text-base lg:hidden bg-white h-10 md:h-13 px-5 md:px-8 rounded-full hover:bg-slate hover:text-white"
-                    >
-                      {item.stepName}
-                    </button>
-                    </div>
-                    <h5 className="text-lg sm:text-xl md:text-2xl font-bold mt-4.5 mb-2">{item.title}</h5>
+                    <h5 className="text-lg sm:text-xl md:text-2xl font-bold mt-4.5 mb-2">
+                      {item.title}
+                    </h5>
                     <p className="text-sm md:text-base ">{item.desc}</p>
                   </div>
                 </div>
@@ -75,10 +77,11 @@ export default function StandardsSection() {
             </div>
             <div className="hidden max-w-260 w-full  bg-white border border-black/30 rounded-full lg:flex justify-between items-center p-1.5 absolute -bottom-8 left-1/2 -translate-x-1/2">
               <h6 className="heading-6 text-center w-full flex-1">
-               Ready for a Cleaner Facility?
+                Ready for a Cleaner Facility?
               </h6>
-              <Link href="/contact" ><ArrowButton>Get a Free Quote</ArrowButton></Link>
-              
+              <Link href="/contact">
+                <ArrowButton>Get a Free Quote</ArrowButton>
+              </Link>
             </div>
           </div>
         </div>

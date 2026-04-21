@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import Header from "@/components/Header";
 import InputBox from "@/components/InputBox";
 import { EyeCloseIcon, EyeOpenIcon } from "@/components/SvgIcons";
 import Link from "next/link";
@@ -48,7 +47,6 @@ export default function Login() {
   };
   return (
     <div>
-      <Header bgcolor="md:bg-darkSlate" />
       <div className="grid place-items-center h-screen">
         <div className="w-[95%] mt-4 sm:mt-0 p-6 sm:max-w-[500px] sm:w-full sm:p-8 bg-white shadow border border-gray-200 rounded-lg">
           <h1 className="font-semibold text-3xl text-gray-700 mt-3">
