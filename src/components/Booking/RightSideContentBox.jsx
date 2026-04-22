@@ -19,25 +19,25 @@ const includeSteps = [
     id: 1,
     icon: AssessmentIcon,
     title: "Free Site Assessment",
-    desc: "We evaluate your space before quoting — no guesswork",
+    desc: "We evaluate your space before quoting — no guesswork.",
   },
   {
     id: 2,
     icon: CrewManIcon,
     title: "Background-Checked Crew",
-    desc: "Every cleaner is vetted, insured, and uniformed",
+    desc: "Every cleaner is vetted, insured, and uniformed.",
   },
   {
     id: 3,
     icon: CalenderIcon,
     title: "Custom Cleaning Plan",
-    desc: "Tailored to your schedule, size, and compliance needs",
+    desc: "Tailored to your schedule, size, and compliance needs.",
   },
   {
     id: 4,
     icon: LoopIcon,
     title: "Satisfaction Guarantee",
-    desc: "Not happy? We make it right — every time",
+    desc: "Not happy? We make it right — every time.",
   },
 ];
 const servicesOptions = [
