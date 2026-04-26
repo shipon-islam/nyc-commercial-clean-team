@@ -2,8 +2,8 @@
 
 import { db_connect } from "@/database";
 import { BlogModel } from "@/database/models/blogModel";
+import { CommentModel } from "@/database/models/commentModel"; // ADD THIS
 import { UserModel } from "@/database/models/userModel";
-
 // export const getBlogs = async () => {
 //   try {
 //     const res = await fetch(process.env.BASE_URL + "/api/blog", {
@@ -44,9 +44,9 @@ export const getBlogs = async () => {
 // };
 export const getBlogById = async (id) => {
   try {
-    console.log(UserModel);
+    console.log(CommentModel);
     await db_connect();
-    const blogs = await BlogModel.findById(id).populate("author").lean();
+    const blogs = await BlogModel.findById(id).populate("comments").lean();
     return JSON.parse(JSON.stringify(blogs));
   } catch (err) {
     console.error(err);
@@ -55,9 +55,9 @@ export const getBlogById = async (id) => {
 };
 export const getBlogBySlug = async (slug) => {
   try {
-    console.log(UserModel);
+    console.log(CommentModel);
     await db_connect();
-    const blogs = await BlogModel.findOne({slug}).populate("author").lean();
+    const blogs = await BlogModel.findOne({slug}).populate("comments").lean();
     return JSON.parse(JSON.stringify(blogs));
   } catch (err) {
     console.error(err);

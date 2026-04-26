@@ -23,6 +23,11 @@ export const blogYupSchema = (isEditMode) =>
           const text = value?.replace(/<[^>]*>/g, "").trim();
           return !text || text.length >= 10;
         }),
+      shortDescription: yup
+        .string()
+        .required("Short description is required")
+        .min(5, "Short description must be at least 5 character")
+        .max(150, "Short description must be at most 150 characters"),
       image: yup
         .mixed()
         .test("required", "Image is required", (value) => {

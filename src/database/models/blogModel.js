@@ -23,11 +23,20 @@ const blogSchema = new mongoose.Schema(
       trim: true,
       minlength: 10,
     },
+    shortDescription: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 5,
+      maxlength: 150,
+    },
     image: {
       type: String,
       required: true,
     },
+    
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 export const BlogModel = models.Blog || mongoose.model("Blog", blogSchema);

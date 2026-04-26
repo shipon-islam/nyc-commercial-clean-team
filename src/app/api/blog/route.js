@@ -7,11 +7,11 @@ import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 export async function POST(request) {
   const formData = await request.formData();
-
   await db_connect();
   if (
     !formData.has("title") ||
     !formData.has("content") ||
+    !formData.has("shortDescription") ||
     !formData.has("image")
   ) {
     return NextResponse.json(
@@ -22,7 +22,8 @@ export async function POST(request) {
 
   const token = request.cookies.get("token")?.value;
   const user = await verifyToken(token);
-  const { image, title, content } = Object.fromEntries(formData);
+  const { image, title, content, shortDescription } =
+    Object.fromEntries(formData);
   try {
     const slug = makeSlug(title);
     const isExistSlug = await BlogModel.find({ slug });
@@ -37,11 +38,9 @@ export async function POST(request) {
 
     const feedbackData = await BlogModel.create({
       title,
-      slug:
-        isExistSlug.length > 0
-          ? slug + "-" + isExistSlug.length
-          : slug,
+      slug: isExistSlug.length > 0 ? slug + "-" + isExistSlug.length : slug,
       content,
+      shortDescription,
       image: filename,
       author: user?.id,
     });

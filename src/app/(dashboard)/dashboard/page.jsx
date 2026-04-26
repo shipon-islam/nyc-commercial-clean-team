@@ -85,8 +85,8 @@ export default function BlogPost() {
         <div className="grid gap-8 lg:grid-cols-3 ">
           {blogs?.map((blog) => (
             <div key={blog._id} className="custom-shadow p-4 rounded-md ">
-              <div className="flex justify-between items-center">
-                <h5 className="font-semibold  py-1">{blog.title}</h5>
+              <div className="flex justify-between items-center mb-2">
+                <h5 className="font-semibold  py-1 capitalize">{blog.title}</h5>
                 <div className="flex gap-2 items-center">
                   <Link href={`/dashboard/blog/edit/${blog.slug}`} className="relative top-0.5">
                     <button className="cursor-pointer hover:text-blue-500 hover:border-blue-500">
@@ -119,8 +119,9 @@ export default function BlogPost() {
               />
               <div
                 className="my-2 wrap-break-word"
-                dangerouslySetInnerHTML={{ __html: blog.content }}
-              />
+              >
+                <p>{blog.shortDescription} ...</p>
+              </div>
             </div>
           ))}
         </div>

@@ -11,13 +11,16 @@ export async function GET(request, context) {
   console.log(UserModel);
   try {
     await db_connect();
-    const blogs = await BlogModel.findById(id).populate("author");
+    const blog = await BlogModel.findById(id).populate({
+      path: "comments",
+      model: "Comment",
+    });
 
-    if (!blogs) {
-      return new NextResponse("blogs not found", { status: 404 });
+    if (!blog) {
+      return new NextResponse("blog not found", { status: 404 });
     }
 
-    return NextResponse.json(blogs, {
+    return NextResponse.json(blog, {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +45,7 @@ export async function DELETE(request, context) {
       );
     }
     deleteFile("blog", deleteBlog.image);
-    const paths = ["/", "/blogs","/blog/" + deleteBlog.slug];
+    const paths = ["/", "/blogs", "/blog/" + deleteBlog.slug];
     paths.forEach((p) => revalidatePath(p));
     return NextResponse.json(
       { message: "blog deleted successfully" },
@@ -64,10 +67,13 @@ export async function DELETE(request, context) {
 export async function PUT(request, context) {
   const { id } = await context.params;
   const formData = await request.formData();
-  const { image, title, content, existingImage } = Object.fromEntries(formData);
+  const { image, title, content, shortDescription, existingImage } =
+    Object.fromEntries(formData);
+
   if (
     !formData.has("title") ||
     !formData.has("content") ||
+    !formData.has("shortDescription") ||
     (!formData.has("image") && !existingImage)
   ) {
     return NextResponse.json(
@@ -85,6 +91,7 @@ export async function PUT(request, context) {
         title,
         slug: isExistSlug.length > 0 ? slug + "-" + isExistSlug.length : slug,
         content,
+        shortDescription,
         image: filename,
       };
     } else {
@@ -92,6 +99,7 @@ export async function PUT(request, context) {
         title,
         slug: isExistSlug.length > 0 ? slug + "-" + isExistSlug.length : slug,
         content,
+        shortDescription,
         image: existingImage,
       };
     }

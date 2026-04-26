@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, useWatch } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Editor = dynamic(() => import("@/components/dashboard/editor/Editor"), {
@@ -18,8 +18,8 @@ export default function BlogForm({ blog }) {
   const [loading, setLoading] = useState(false);
   const [isRefresh, setIsRefresh] = useState(false);
   const path = usePathname();
-  const isEdit=path.includes("edit")
-  const router=useRouter()
+  const isEdit = path.includes("edit");
+  const router = useRouter();
 
   const {
     reset,
@@ -31,24 +31,29 @@ export default function BlogForm({ blog }) {
     defaultValues: {
       title: blog?.title || "",
       content: blog?.content || "",
-      image:[],
+      shortDescription: blog?.shortDescription || "",
+      image: [],
     },
     resolver: yupResolver(blogYupSchema(isEdit)),
   });
-
+ const shortDescriptionField = useWatch({
+    control,
+    name: "shortDescription",
+  });
   //for submitting the form
   const onSubmit = async (e) => {
     const formData = new FormData();
     formData.append("title", e.title);
     formData.append("content", e.content);
+    formData.append("shortDescription", e.shortDescription);
     if (e.image && e.image.length > 0) {
       formData.append("image", e.image[0]);
     }
     setLoading(true);
 
-    if (isEdit) {     
-        formData.append("existingImage", blog.image);
-   
+    if (isEdit) {
+      formData.append("existingImage", blog.image);
+
       try {
         const res = await fetch(`/api/blog/${blog?._id}`, {
           method: "PUT",
@@ -59,12 +64,13 @@ export default function BlogForm({ blog }) {
           reset({
             title: "",
             content: "",
+            shortDescription: "",
             image: [],
           });
           setLoading(false);
           setIsRefresh(!isRefresh);
           toast.success("Blog updated successfully!");
-          router.push("/dashboard")
+          router.push("/dashboard");
         }
       } catch (error) {
         toast.error(error.message);
@@ -77,14 +83,12 @@ export default function BlogForm({ blog }) {
           body: formData,
         });
         const data = await res.json();
-            
+
         if (data) {
-          reset();          
+          reset();
           setLoading(false);
           setIsRefresh(!isRefresh);
           toast.success("Blog created successfully!");
-
-          
         }
       } catch (error) {
         console.log(error);
@@ -98,7 +102,9 @@ export default function BlogForm({ blog }) {
     <div className="md:w-4/5 mx-auto">
       <div className="mt-10">
         <div className="flex justify-between mt-8">
-          <h1 className="text-2xl font-bold">{isEdit?"Update":"Create"} new blog</h1>
+          <h1 className="text-2xl font-bold">
+            {isEdit ? "Update" : "Create"} new blog
+          </h1>
           <Link
             className="bg-slate text-white px-4 py-2 rounded-xl"
             href="/dashboard/"
@@ -129,7 +135,31 @@ export default function BlogForm({ blog }) {
             )}
           </div>
           <div>
-            <label className="mb-4 block">Description</label>
+            <label htmlFor="" className="mb-1 block">
+              Short Description:
+            </label>
+            <textarea
+              placeholder="Write something..."
+              className={`border border-gray-300 w-full focus:outline-0 rounded-md p-3 min-h-24 focus:outline-none ${
+                errors.shortDescription ? "border-red-500" : "border-gray-300"
+              }`}
+              {...register("shortDescription")}
+            ></textarea>
+            <div className="flex items-center justify-between">
+              {errors.shortDescription && (
+                <p className="text-red-500 text-sm mt-1 ml-1">
+                  {errors.shortDescription.message}
+                </p>
+              )}
+              <p
+                className={`w-fit ml-auto ${shortDescriptionField.length > 150 && "text-red"}`}
+              >
+                {shortDescriptionField.length}
+              </p>
+            </div>
+          </div>
+          <div>
+            <label className="mb-4 block">Description: </label>
             <Controller
               name="content"
               control={control}
