@@ -1,6 +1,9 @@
 import BlogListArea from "@/components/blogs/BlogListArea";
 import HeroBanner from "@/components/HeroBanner";
-
+export const metadata = {
+  title: "NYC-SERVICES - BLOGS",
+  description: "professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference",
+};
 export default async function Blogs() {
 
   return (

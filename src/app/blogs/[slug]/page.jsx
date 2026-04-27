@@ -4,6 +4,14 @@ import { GetTime } from "@/utility/GetTime";
 import { timeAgo } from "@/utility/timeAgo";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+  return {
+    title: `${blog.title} | NYC-SERVICES`,
+    description: blog.shortDescription || blog.metaDescription,
+  };
+}
 export default async function BlogDetails({ params }) {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
@@ -27,7 +35,9 @@ export default async function BlogDetails({ params }) {
             <h1 className="heading-2 capitalize">{blog?.title}</h1>
             <div
               className="mt-6 body-text wrap-break-word"
-              dangerouslySetInnerHTML={{ __html: blog?.content }}
+              dangerouslySetInnerHTML={{
+                __html: blog?.content.replace(/&nbsp;/g, " "),
+              }}
             />
           </div>
           {blog.comments.length > 0 && (

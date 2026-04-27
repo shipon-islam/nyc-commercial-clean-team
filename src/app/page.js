@@ -9,7 +9,10 @@ import StandardsSection from "@/components/home/StandardsSection";
 import WhySection from "@/components/home/WhySection";
 import MarqueHighlightText from "@/components/MarqueHighlightText";
 import { getFeedback } from "@/utility/getFeedback";
-
+export const metadata = {
+  title: "NYC-SERVICES - HOME",
+  description: "professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference",
+};
 export default async function Home() {
   const feedbacks = await getFeedback();
   return (

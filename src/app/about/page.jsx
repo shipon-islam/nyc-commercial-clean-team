@@ -3,7 +3,10 @@ import ExpertiseSection from '@/components/about/ExpertiseSection'
 import WhyChooseUs from '@/components/about/WhyChooseUs'
 import HeroBanner from '@/components/HeroBanner'
 import MarqueHighlightText from '@/components/MarqueHighlightText'
-
+export const metadata = {
+  title: "NYC-SERVICES - ABOUT",
+  description: "professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference",
+};
 export default function AboutUs() {
   return (
     <main>
