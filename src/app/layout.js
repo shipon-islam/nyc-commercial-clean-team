@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ToastProvider from "@/components/ToastProvider";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "swiper/css";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <ToastProvider>
           <Header />
           {children}
+          <ScrollToTopButton/>
           <Footer />
         </ToastProvider>
       </body>

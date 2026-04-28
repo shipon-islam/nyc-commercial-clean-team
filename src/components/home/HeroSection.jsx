@@ -1,47 +1,36 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import ButtonSolid from "../ButtonSolid";
 export default function HeroSection() {
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <section className="container mt-8 sm:mt-16">
       <div className="relative overflow-hidden">
-        {isMobile ? (
-          <Image
-            src="/images/videoplaceholder.webp"
-            alt="Commercial cleaning services in NYC - professional office and facility cleaning"
-            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full"
-            fetchPriority="high"
-            loading="eager"
-            width={500}
-            height={400}
-          />
-        ) : (
+        
           <video
             poster="/images/videoplaceholder.webp"
             autoPlay
             muted
             loop
             playsInline
-            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full"
+            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full sm:hidden"
+          >
+            <source src="/videos/city-video-mobile.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video
+            poster="/images/videoplaceholder.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full hidden sm:block"
           >
             <source src="/videos/city-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        )}
+     
         {/* <Image
           src={cleaningNyc}
           alt="cleaningNyc"
