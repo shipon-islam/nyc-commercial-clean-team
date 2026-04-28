@@ -36,7 +36,7 @@ export default function HeroSection() {
           alt="cleaningNyc"
           className="rounded-lg w-full h-100 sm:h-auto object-cover max-h-100 sm:max-h-100 md:max-h-208.5"
         /> */}
-        <div className="w-full h-full bg-black/20 backdrop-blur-xs  absolute top-0 left-0   rounded-[20px]">
+        <div className="w-full h-full bg-black/20 backdrop-blur-sm  absolute top-0 left-0   rounded-[20px]">
           <div className="text-white flex flex-col items-center justify-center text-center h-full px-2 sm:px-4">
             <h1 className="text-[32px] sm:text-5xl lg:text-[56px] leading-[120%] ">
               Commercial cleaning <br /> services in NYC
