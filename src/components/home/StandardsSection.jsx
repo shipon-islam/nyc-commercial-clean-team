@@ -13,7 +13,7 @@ export default function StandardsSection() {
         <div>
           <CommonHeading
             title="Standards"
-            heading="How we work"
+            heading="How Our Cleaning Process Works"
             center={true}
             subHeading="Every detail matters in commercial cleaning."
           />

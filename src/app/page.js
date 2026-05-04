@@ -24,9 +24,9 @@ const DynamicMarqueHighlightText = dynamic(
 );
 const DynamicFAQs = dynamic(() => import("@/components/home/FAQs"));
 export const metadata = {
-  title: "New York Commercial Clean Team INC",
+  title: "Commercial Cleaning Services NYC | NYC Clean Team",
   description:
-    "professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference",
+    "NYC’s trusted commercial cleaning company for offices, retail, medical facilities &amp; more.Serving all 5 boroughs. Request a free quote today.",
   links: [
     {
       rel: "preload",

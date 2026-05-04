@@ -13,8 +13,8 @@ export default function ServicesSection() {
           <div className="lg:sticky top-24 h-fit">
             <CommonHeading
               title="Services"
-              heading="What We are Offering to Our Potential Client"
-              subHeading="Professional commercial cleaning solutions for offices, retail spaces, and facilities throughout the New York City metropolitan area, managed by our dedicated local team."
+              heading="Commercial Cleaning Services We Offer"
+              subHeading="We handle the full scope of commercial cleaning — tailored to your facility, schedule, and operational needs."
             />
             <div className="mt-6 bg-white p-2.5 rounded-xl">
               <div className="grid grid-cols-2 gap-6 mt-2">
@@ -68,10 +68,10 @@ export default function ServicesSection() {
                   <div>
                     <div className="min-h-56 xs:min-h-54 sm:min-h-48 mt-10">
                       <div className="py-2 rounded-r-xl absolute bg-white w-[85%] z-20">
-                        <h5 className="heading-5 font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer">
+                        <h5 className="font-bold  my-3 before:w-0 hover:before:w-full before:h-px before:absolute before:bg-black before:-bottom-1 before:left-0 before:transition-all before:duration-300  relative w-fit cursor-pointer text-3xl">
                           {item.heading}
                         </h5>
-                        <p className="mb-4 text-xs xs:text-sm sm:text-base lg:text-sm xl:text-base text-justify pr-3">
+                        <p className="mb-4 text-xl  pr-3">
                           {item.desc}
                         </p>
                       </div>

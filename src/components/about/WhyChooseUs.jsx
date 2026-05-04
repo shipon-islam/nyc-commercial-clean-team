@@ -15,13 +15,13 @@ const ourProcces = [
     id: 1,
     icon: TrustIcon,
     title: "Trusted & Reliable",
-    desc: "We keep our commitments and deliver consistent, high-quality results—every time.",
+    desc: "We keep our commitments and show up consistently, every scheduled visit.",
   },
   {
     id: 2,
     icon: QualityIcon,
     title: "Quality That Lasts",
-    desc: "We keep our commitments and deliver consistent, high-quality results—every time.",
+    desc: "Our standards hold after week one — quality is built into the process.",
   },
   {
     id: 3,
@@ -33,19 +33,19 @@ const ourProcces = [
     id: 4,
     icon: TrainTeamIcon,
     title: "Trained Team",
-    desc: "Our team is fully trained, vetted, and equipped to handle your facility with care.",
+    desc: "Every crew member is vetted, trained, and directly managed by our operations team.",
   },
   {
     id: 5,
     icon: TrackIcon,
     title: "Proven Track Record",
-    desc: "Thousands of successful projects across NYC and a growing list of satisfied clients.",
+    desc: "Hundreds of successful commercial projects across NYC and a growing client base.",
   },
   {
     id: 6,
     icon: SupportIcon,
     title: "Responsive Support",
-    desc: "We’re here when you need us—quick to respond and ready to solve any issue.",
+    desc: "We’re here when you need us — fast to respond and ready to resolve issues.",
   },
 ];
 export default function WhyChooseUs() {
@@ -55,7 +55,10 @@ export default function WhyChooseUs() {
         <CommonHeading
           title="Why Choose Us ?"
           heading="What Sets Us Apart from Other NYC Cleaning Companies"
-          subHeading="Commercial cleaning contracts are built on trust, reliability, and the ability to maintain a standard over time — not just on the first visit."
+          subHeading="Commercial cleaning contracts are built on trust, reliability, and the ability to maintain a standard
+over time — not just on the first visit. We understand the pace of New York City operations and
+deliver consistent results without the inconsistency that comes with subcontracted, unmanaged
+crews."
         />
       </div>
 

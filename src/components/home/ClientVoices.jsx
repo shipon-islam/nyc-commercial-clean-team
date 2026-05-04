@@ -13,8 +13,8 @@ export default function ClientVoices({feedbacks}) {
         <CommonHeading
           title="Client Voices"
           heading="What our clients say"
-          subHeading="Real feedback from facilities across New York City.
-"
+          subHeading={`“Trusted by businesses across New York City for reliable and consistent cleaning
+services.”`}
         />
       </div>
       {feedbacks.length<=0?<p>There is no client say</p>:<div className="mt-8 sm:mt-16">

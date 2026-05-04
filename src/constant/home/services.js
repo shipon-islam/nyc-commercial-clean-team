@@ -6,7 +6,7 @@ export const services = [
     icon:ServiceCardIcon,
     slug: "office-cleaning",
     heading: "Office cleaning",
-    desc: "Workspaces, restrooms, breakrooms, and common areas are thoroughly cleaned and prepared before your team arrives, ensuring every scheduled visit delivers a consistent, spotless, and professional environment without disruption.",
+    desc: "Keep your workspace consistently clean, organized, and client-ready.",
     
   },
   {
@@ -15,7 +15,7 @@ export const services = [
     icon:JanitorialServiceIcon,
     slug: "janitorial-services",
     heading: "Janitorial Services",
-    desc: "Full-building janitorial coverage for lobbies, hallways, restrooms, and shared spaces, delivered with consistent quality and care. Flexible daily or nightly schedules ensure your facility stays clean, organized, and ready for use.",
+    desc: "Daily and scheduled cleaning programs designed for high-traffic facilities.",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const services = [
     icon:DayPorterServiceIcon,
     slug: "day-porter-services",
     heading: "Day Porter Services",
-    desc: "Full-building janitorial coverage for lobbies, hallways, restrooms, and shared spaces, delivered with consistent quality and care. Flexible daily or nightly schedules ensure your facility stays clean, organized, and ready for use.",
+    desc: "On-site staff to maintain cleanliness throughout the day.",
   },
   
 ];

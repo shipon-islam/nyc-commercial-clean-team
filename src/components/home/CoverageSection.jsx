@@ -13,8 +13,9 @@ export default function CoverageSection() {
       <div>
         <CommonHeading
           title="Coverage"
-          heading="We serve all five boroughs"
-          subHeading="Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — plus Long Island and surrounding areas."
+          heading="Serving All Five Boroughs"
+          subHeading="We provide commercial cleaning services across Manhattan, Brooklyn, Queens, The Bronx,
+Staten Island, and Long Island."
         />
       </div>
       <div className="mt-8 sm:mt-16 hidden sm:block">

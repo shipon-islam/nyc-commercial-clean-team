@@ -36,8 +36,8 @@ export default function WhySection() {
         <div>
           <CommonHeading
             title="Why Choose Us"
-            heading="NYC Businesses Trust Us for Reliable Cleaning"
-            subHeading="Office managers and property managers across New York City rely on us because we show up when scheduled, perform to a consistent standard, and communicate clearly. No rotating crews. No missed visits. No surprises"
+            heading="Why NYC Businesses Choose Us"
+            subHeading="We understand the operational demands of New York City — tight schedules, high foot traffic, and zero tolerance for inconsistency — which is why we provide fully managed teams without subcontractors, reliable scheduling and communication, cleaning tailored to your specific facility rather than a one-size-fits-all template, and fast issue resolution without delays to keep your business running smoothly."
           />
 
           <div className="mt-8 mx-auto md:mx-0 w-fit">

@@ -9,8 +9,8 @@ export default function IndusriesSection() {
       <div>
         <CommonHeading
           title="Industries"
-          heading="Who we serve"
-          subHeading="Specialized commercial cleaning for every sector across New York City."
+          heading="Industries We Serve"
+          subHeading="We provide commercial cleaning services tailored to the unique needs of different industries across NYC."
         />
       </div>
       <div className="grid md:grid-cols-[1fr_1.2fr] gap-8 mt-8">
