@@ -1,8 +1,8 @@
 "use client";
 import logo from "@/assets/logos/nyc-logo.png";
-import { trackCtaClick } from "@/lib/gtm";
 import { followUsLinks } from "@/constant/footer";
 import { headerLinks } from "@/constant/header";
+import { trackCtaClick } from "@/lib/gtm";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,8 +46,10 @@ export default function Header() {
   }
 
   return (
+    
+    
     <header
-      className={`sticky top-0 z-50  bg-slate rounded-b-[20px] text-white lg:py-2 ${!isMenuOpen ? "bg-slate" : "bg-white lg:bg-slate"} ${
+      className={`sticky top-8 z-50  bg-slate rounded-b-[20px] text-white lg:py-2 ${!isMenuOpen ? "bg-slate" : "bg-white lg:bg-slate"} ${
         scrolled
           ? "opacity-0 -translate-y-full transition-transform duration-300"
           : "opacity-100 translate-y-0 transition-transform duration-300"
@@ -172,5 +174,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+  
   );
 }

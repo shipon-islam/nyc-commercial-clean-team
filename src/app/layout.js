@@ -5,6 +5,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ToastProvider from "@/components/ToastProvider";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
+import Topbar from "@/components/Topbar";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "swiper/css";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
       >
         <ToastProvider>
           <GTMPageTracker />
+          <Topbar/>
           <Header />
           {children}
           <ScrollToTopButton />
