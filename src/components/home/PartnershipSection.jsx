@@ -14,7 +14,7 @@ export default function PartnershipSection() {
   const sliderItems = [
     {
       id: 1,
-      image: "/images/partnership/cleaning-discussion.webp",
+      image: "/images/partnership/caution-wet-floor.webp",
       title: "Plans Built Around Your Facility",
       desc: "Every space is different. We assess your facility, traffic patterns, and schedule before building a cleaning plan — then we stick to it.",
     },
@@ -32,7 +32,7 @@ export default function PartnershipSection() {
     },
     {
       id: 4,
-      image: "/images/partnership/outlines-two-business-people-shaking-hands-celebrate-win-win-deal.webp",
+      image: "/images/partnership/red-stream.webp",
       title: "Quality inspections",
       desc: "Regular audits ensure standards are met consistently across every visit.",
     },

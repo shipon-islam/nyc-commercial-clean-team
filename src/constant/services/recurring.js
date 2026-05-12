@@ -18,7 +18,7 @@ export const recurrings = [
   },
   {
     id: 3,
-    image: "/images/services/recurring/wall-cleaning.jpg",
+    image: "/images/services/recurring/bookself-cleaning.webp",
     slug:"day-porter-services",
     title: "RECURRING",
     heading: "Day porter services",

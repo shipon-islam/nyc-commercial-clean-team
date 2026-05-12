@@ -156,7 +156,7 @@ export default function Footer() {
               ))}
               <Link
                 href="/privacy-policy"
-                className="hidden lg:block text-light underline hover:text-blue-500 relative lg:top-13 xl:top-6.25 h-0"
+                className="hidden lg:block text-light underline hover:text-blue-500 relative lg:top-13.75 xl:top-6.75 h-0"
               >
                 Cookies settings
               </Link>

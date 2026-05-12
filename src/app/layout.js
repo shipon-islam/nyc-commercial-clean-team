@@ -3,10 +3,9 @@ import GTMPageTracker from "@/components/GTMPageTracker";
 import Header from "@/components/Header";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ToastProvider from "@/components/ToastProvider";
-import { Inter, JetBrains_Mono } from "next/font/google";
-
 import Topbar from "@/components/Topbar";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "swiper/css";
 import "./globals.css";
 const jetBrainsMono = JetBrains_Mono({
@@ -29,22 +28,43 @@ export const metadata = {
   icons: {
     icon: "/favicon.png",
   },
-};
+  openGraph: {
+    title: "NYC-SERVICES",
+    description: "Commercial cleaning services in NYC",
+    url: "https://nyccleantinc.com",
+    siteName: "NYC-SERVICES",
+    images: [
+      {
+        url: "/images/home/services/floor-moping.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Floor Moping Service",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 
+  twitter: {
+    card: "summary_large_image",
+    title: "NYC-SERVICES",
+    description: "Commercial cleaning services in NYC",
+    images: ["/images/home/services/floor-moping.jpg"],
+  },
+};
 export default function RootLayout({ children }) {
   const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
   return (
     <html lang="en">
-      <head>
-      </head>
+      <head></head>
       {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
       <body
         className={`${jetBrainsMono.variable} ${inter.variable} antialiased`}
       >
         <ToastProvider>
           <GTMPageTracker />
-          <Topbar/>
+          <Topbar />
           <Header />
           {children}
           <ScrollToTopButton />
