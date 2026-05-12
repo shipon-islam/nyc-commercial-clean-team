@@ -200,7 +200,7 @@ export default function Footer() {
               Cookies settings
             </Link>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </footer>
   );

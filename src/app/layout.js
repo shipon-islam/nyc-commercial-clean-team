@@ -83,5 +83,5 @@ export default function RootLayout({ children }) {
         </ToastProvider>
       </body>
     </html>
-  );
+  )
 }
