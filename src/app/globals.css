@@ -118,5 +118,5 @@
 }
 .ql-editor a {
   color: var(--color-slate);
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
