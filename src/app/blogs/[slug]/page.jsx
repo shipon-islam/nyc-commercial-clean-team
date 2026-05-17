@@ -34,9 +34,11 @@ export default async function BlogDetails({ params }) {
           <div className="mt-8 sm:mt-16">
             <h1 className="heading-2 capitalize">{blog?.title}</h1>
             <div
-              className="mt-6 body-text wrap-break-word"
+              className="mt-6 ql-editor body-text"
               dangerouslySetInnerHTML={{
-                __html: blog?.content.replace(/&nbsp;/g, " "),
+                __html: blog?.content
+                  .replace(/&nbsp;/g, " ")
+                  .replace(/<p><\/p>/g, ""),
               }}
             />
           </div>

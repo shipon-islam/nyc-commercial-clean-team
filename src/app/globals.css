@@ -16,6 +16,27 @@
   @apply mx-auto max-w-none 2xl:max-w-360 px-4 md:px-10! lg:px-8;
 }
 @layer base {
+  ol,
+  ul {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 0;
+  }
+
+  ol li,
+  ul li {
+    counter-increment: item;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  ol li::before {
+    content: counter(item) ".";
+  }
+  ul li::before {
+    content: "•";
+  }
+
   body {
     @apply font-inter;
   }
@@ -65,3 +86,37 @@
   }
 }
 @custom-variant hover (&:hover);
+
+.ql-editor p {
+  margin-top: 0;
+  margin-bottom: 16px !important;
+}
+
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6 {
+  margin-top: 24px !important;
+  margin-bottom: 12px !important;
+}
+
+.ql-editor ul,
+.ql-editor ol {
+  padding-left: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.ql-editor ol li {
+  list-style: decimal !important;
+  margin-bottom: 8px;
+}
+.ql-editor ul li {
+  list-style: disc !important;
+  margin-bottom: 8px;
+}
+.ql-editor a {
+  color: var(--color-slate);
+  text-decoration: underline;
+}
