@@ -11,16 +11,24 @@ export function trackPageView(url) {
   pushEvent("page_view", { page_path: url });
 }
 
-export function trackContactFormSubmit({ subject }) {
+export function trackContactFormSubmit({ name, email, phone, subject, message }) {
   pushEvent("contact_form_submit", {
     form_name: "contact_form",
+    form_user_name: name || "not_set",
+    form_user_email: email || "not_set",
+    form_user_phone: phone || "not_set",
     form_subject: subject || "not_set",
+    form_message: message || "not_set",
   });
 }
 
-export function trackBookingSubmit({ service, industry, facilitySize }) {
+export function trackBookingSubmit({ firstName, lastName, email, phone, service, industry, facilitySize }) {
   pushEvent("booking_form_submit", {
     form_name: "booking_form",
+    booking_first_name: firstName || "not_set",
+    booking_last_name: lastName || "not_set",
+    booking_email: email || "not_set",
+    booking_phone: phone || "not_set",
     booking_service: service || "not_set",
     booking_industry: industry || "not_set",
     booking_facility_size: facilitySize || "not_set",
