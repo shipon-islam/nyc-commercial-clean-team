@@ -35,7 +35,13 @@ export default function ContactForm() {
         reset();
         setLoading(false);
         toast.success("Email sent successfully");
-        trackContactFormSubmit({ subject: data.subject });
+        trackContactFormSubmit({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: data.subject,
+          message: data.message,
+        });
         reset();
       } else {
         setLoading(false);

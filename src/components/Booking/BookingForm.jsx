@@ -52,6 +52,10 @@ export default function BookingForm() {
       if (data) {
         setLoading(false)
         trackBookingSubmit({
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          phone: values.phone,
           service: values.services?.join(", "),
           industry: values.facilityType,
           facilitySize: values.facilitySize,
