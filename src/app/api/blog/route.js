@@ -22,6 +22,9 @@ export async function POST(request) {
 
   const token = request.cookies.get("token")?.value;
   const user = await verifyToken(token);
+  if (!user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   const { image, title, content, shortDescription } =
     Object.fromEntries(formData);
   try {
