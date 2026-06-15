@@ -6,27 +6,47 @@ export default function HeroSection() {
   return (
     <section className="container mt-8 sm:mt-16">
       <div className="relative overflow-hidden">
+        {/* ORIGINAL VIDEO - commented out, do not delete
+          <video
+            poster="/images/videoplaceholder.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full sm:hidden"
+          >
+            <source src="/videos/city-video-mobile.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video
+            poster="/images/videoplaceholder.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full hidden sm:block"
+          >
+            <source src="/videos/city-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        */}
         <video
           poster="/images/videoplaceholder.webp"
           autoPlay
           muted
           loop
           playsInline
-          className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full sm:hidden"
+          preload="none"
+          className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full"
         >
-          <source src="/videos/city-video-mobile.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video
-          poster="/images/videoplaceholder.webp"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="rounded-[20px] w-full object-cover h-100 xs:h-85 sm:h-full hidden sm:block"
-        >
-          <source src="/videos/city-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source
+            src="https://pub-15cceab11b2f454f828f50cb4ba7a3c5.r2.dev/output.webm"
+            type="video/webm"
+          />
+          <source
+            src="https://pub-15cceab11b2f454f828f50cb4ba7a3c5.r2.dev/output-compressed.mp4"
+            type="video/mp4"
+          />
         </video>
 
         {/* <Image
@@ -34,7 +54,7 @@ export default function HeroSection() {
           alt="cleaningNyc"
           className="rounded-lg w-full h-100 sm:h-auto object-cover max-h-100 sm:max-h-100 md:max-h-208.5"
         /> */}
-        <div className="w-full h-full bg-black/20 backdrop-blur-sm  absolute top-0 left-0   rounded-[20px]">
+        <div className="w-full h-full bg-black/10 backdrop-blur-[2px] sm:backdrop-blur-[4px]  absolute top-0 left-0   rounded-[20px]">
           <div className="text-white flex flex-col items-center justify-center text-center h-full px-2 sm:px-4">
             <h1 className="text-[32px] sm:text-5xl lg:text-[56px] leading-[120%] ">
               Commercial cleaning <br /> services in NYC
