@@ -9,8 +9,19 @@ export const bookingYupSchema = Yup.object().shape({
     .required("Last name is required"),
   email: Yup.string().email("Email is invalid").required("Email is required"),
   phone: Yup.string()
-    .min(10, "Phone number must be at least 10 digits")
-    .required("Phone number is required"),
+  .transform((value) => value?.replace(/\D/g, "") || "")
+  .test("is-valid-us-phone", "Enter a valid USA phone number", (value) => {
+    if (!value) return false;
+
+    if (value.length === 11 && value.startsWith("1")) {
+      value = value.slice(1);
+    }
+
+    if (value.length !== 10) return false;
+
+    return /^[2-9]\d{2}[2-9]\d{6}$/.test(value);
+  })
+  .required("Phone number is required"),
   companyName: Yup.string()
     .min(2, "Company name must be at least 2 characters")
     .required("Subject is required"),

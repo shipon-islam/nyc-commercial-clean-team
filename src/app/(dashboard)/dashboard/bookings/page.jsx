@@ -132,7 +132,8 @@ export default function Bookings() {
                         {booking.firstName} {booking.lastName}
                       </span>
                       <span className="text-sm">{booking?.companyName}</span>
-                      <p className="text-sm">{booking.email}</p>
+                      <p className="text-sm flex items-center gap-0.5"><Icon icon="ic:outline-email"/>{booking.email}</p>
+                      <p className="text-sm flex items-center gap-0.5"><Icon icon="ic:outline-phone"/>{booking.phone}</p>
                     </td>
                     <td className="px-2 py-2.5 lg:min-w-40 max-w-70">
                       <div className="flex flex-wrap gap-2 text-xs">
