@@ -34,9 +34,6 @@ export default function Register() {
         },
       });
 
-      if (res.status == 403) {
-        throw new Error("Only @fabusiness.com emails are allowed.");
-      }
       if (res.status == 409) {
         throw new Error("Email already Exists!");
       }
@@ -57,7 +54,7 @@ export default function Register() {
       <div className="grid place-items-center min-h-[90vh] ">
         <div className="w-[95%] mt-4 sm:mt-0 p-6 sm:max-w-[500px] sm:w-full sm:p-8 bg-white shadow border border-gray-200 rounded-lg">
           <h1 className="font-semibold text-3xl text-gray-700 mt-3">
-            Create you Account
+            Create your Account
           </h1>
           <p className="mt-1 mb-8 text-gray-500">
             Please provide your information to create a new account.

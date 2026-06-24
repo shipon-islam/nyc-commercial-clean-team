@@ -6,12 +6,6 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   await db_connect();
   const { name, email, password } = await request.json();
-  if (!email.endsWith("@gmail.com")) {
-    return NextResponse.json(
-      { error: "Only @gmail.com emails are allowed." },
-      { status: 403 }
-    );
-  }
   if ((!name, !email, !password)) {
     return NextResponse.json(
       { error: "Missing required fields" },
