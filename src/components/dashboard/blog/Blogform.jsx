@@ -84,11 +84,14 @@ export default function BlogForm({ blog }) {
         });
         const data = await res.json();
 
-        if (data) {
+        if (res.ok) {
           reset();
           setLoading(false);
-          setIsRefresh(!isRefresh);
           toast.success("Blog created successfully!");
+          router.push("/dashboard");
+        } else {
+          setLoading(false);
+          toast.error(data?.error || "Blog creation failed");
         }
       } catch (error) {
         console.log(error);
