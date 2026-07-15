@@ -33,7 +33,7 @@ export default function Contact() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
-      <DiscountPopup popupName="contact_discount_popup" />
+      {/* <DiscountPopup popupName="contact_discount_popup" /> */}
     </main>
   );
 }
