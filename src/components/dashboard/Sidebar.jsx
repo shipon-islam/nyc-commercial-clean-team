@@ -53,6 +53,14 @@ const Sidebar = () => {
           </Link>
           <Link
             onClick={() => setIsSidebar(false)}
+            href="/dashboard/quotes"
+            className="flex items-center gap-2 py-2 px-4 rounded-md hover:bg-deepBlue "
+          >
+            <Icon icon="hugeicons:quotes" width="25" height="25" />
+            <span>Quotes</span>
+          </Link>
+          <Link
+            onClick={() => setIsSidebar(false)}
             href="/dashboard/users"
             className="flex items-center gap-2 py-2 px-4 rounded-md hover:bg-deepBlue "
           >
