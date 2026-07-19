@@ -49,7 +49,7 @@ export default function Header() {
     
     
     <header
-      className={`sticky top-8 z-50  bg-slate rounded-b-[20px] text-white lg:py-2 ${!isMenuOpen ? "bg-slate" : "bg-white lg:bg-slate"} ${
+      className={`sticky ${path.includes("janitorial-services")?"top-0":"top-8"} z-50  bg-slate rounded-b-[20px] text-white lg:py-2 ${!isMenuOpen ? "bg-slate" : "bg-white lg:bg-slate"} ${
         scrolled
           ? "opacity-0 -translate-y-full transition-transform duration-300"
           : "opacity-100 translate-y-0 transition-transform duration-300"

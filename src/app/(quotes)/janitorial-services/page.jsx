@@ -94,24 +94,23 @@ export default function Quotes() {
                 schedule.
               </p>
               <div className="mt-6">
-                <div className="flex gap-x-15 gap-y-4">
-                  <div className="flex items-center gap-2">
+                
+                <div className="grid grid-cols-2 items-start gap-4 md:w-4/5   gap-y-4 mt-4">
+                  <div className="flex items-start sm:items-center gap-2">
                     <Icon icon="ix:success" width={17} height={17} />{" "}
-                    <span>Fully Insured & Bonded</span>
+                    <span className="text-xs sm:text-sm md:text-base">Fully Insured & Bonded</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-start sm:items-center gap-2">
                     <Icon icon="ix:success" width={17} height={17} />{" "}
-                    <span>Custom Schedules</span>
+                    <span className="text-xs sm:text-sm md:text-base">Custom Schedules</span>
                   </div>
-                </div>
-                <div className="flex gap-x-15 gap-y-4 mt-4">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-start sm:items-center gap-2">
                     <Icon icon="ix:success" width={17} height={17} />{" "}
-                    <span>Eco-Friendly Products</span>
+                    <span className="text-xs sm:text-sm md:text-base">Eco-Friendly Products</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-start sm:items-center gap-2">
                     <Icon icon="ix:success" width={17} height={17} />{" "}
-                    <span>Dedicated Account Manager</span>
+                    <span className="text-xs sm:text-sm md:text-base">Dedicated Account Manager</span>
                   </div>
                 </div>
               </div>
