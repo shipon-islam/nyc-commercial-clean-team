@@ -57,7 +57,7 @@ export default function QuoteForm() {
         Request Pricing
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 text-black">
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 xl:grid-cols-1 gap-4">
           <InputBox
             id="fullName"
             placeholder="Full Name"

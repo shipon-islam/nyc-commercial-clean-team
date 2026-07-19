@@ -1,6 +1,6 @@
-import quote from "@/assets/quotes/quote.jpg";
 import ButtonSolid from "@/components/ButtonSolid";
 import Counter from "@/components/Counter";
+import ManagerReview from "@/components/quote/ManagerReview";
 import QuoteForm from "@/components/quote/QuoteForm";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
@@ -47,39 +47,7 @@ const services = [
     image: "/images/quotes/restroom-deep.jpg",
   },
 ];
-const reviews = [
-  {
-    id: 1,
-    image: "MT",
-    name: "Maria T.",
-    position: "Operations Manager",
-    rating: 5,
-    review: `"The most reliable crew we've ever had.
-They never miss a night and the floors
-look brand new every morning."`,
-  },
-  {
-    id: 2,
-    image: "DR",
-    name: "David R.",
-    position: "Facility Director",
-    rating: 5,
-    review: `"Professional, insured, and they actually
-follow the custom checklist we provided.
-Highly recommend for medical offices."`,
-  },
-  {
-    id: 3,
-    image: "SK",
-    name: "Sarah K.",
-    position: "HR Administrator",
-    rating: 5,
-    review: `"Their eco-friendly products make a huge
-difference for our staff. Great
-communication with our account
-manager."`,
-  },
-];
+
 const handles = [
   {
     id: 1,
@@ -110,17 +78,10 @@ const handles = [
 export default function Quotes() {
   return (
     <main>
-      <section className="relative mt-6">
-        <Image
-          src={quote}
-          alt="Quotes"
-          width={2000}
-          height={759}
-          className="w-full h-auto object-cover"
-        />
-        <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-linear-to-r from-[#1D2F64E5] to-[#1D2F6466] text-white px-4 py-2 rounded-md w-full h-full" />
-        <div className="absolute top-0 left-0 w-full h-full text-white">
-          <div className="container grid grid-cols-2 gap-x-25 justify-center items-center h-full">
+      <section className="relative mt-6 bg-[linear-gradient(to_right,rgba(29,47,100,0.9),rgba(29,47,100,0.4)),url('/images/quotes/quote.jpg')] bg-cover bg-center bg-no-repeat w-full h-320 md:h-260 lg:h-200 xl:h-250 ">
+        
+        <div className="flex items-center w-full h-full absolute top-0 left-0">
+          <div className="container grid lg:grid-cols-2 items-center gap-10 md:gap-15 xl:gap-25  text-white">
             <div>
               <p className="text-xs border border-white font-medium w-fit px-5 py-1.5 rounded-full">
                 Janitorial Services
@@ -154,27 +115,27 @@ export default function Quotes() {
                   </div>
                 </div>
               </div>
-              <div className="mt-10">
+              <a href="tel:+1 (631) 381-7252" className="block mt-10">
                 <ButtonSolid>Call Now (631) 381-7252</ButtonSolid>
-              </div>
+              </a>
             </div>
-            <div>
+            <div >
               <QuoteForm />
             </div>
           </div>
-        </div>
+          </div>
       </section>
       <section className="bg-slate text-white">
         <div className="grid grid-cols-2 md:grid-cols-4 p-10">
           {steps.map((item, id) => (
             <div
               key={item.id}
-              className={` flex-col items-center justify-center text-center border-white/20  ${steps.length - 1 === id ? "" : " border-r border-b md:border-b-0"}`}
+              className={` px-4 py-4 md:py-0 flex-col items-center justify-center text-center border-white/20  ${steps.length - 1 === id ? "" : " border-r border-b md:border-b-0"} ${steps.length - 2 === id ? "border-b-0" : " "} ${steps.length - 3 === id ? "border-r-0 md:border-r" : " "}`}
             >
               <Counter
                 value={item.score}
                 sign={item.sign}
-                className="text-3xl sm:text-4xl  whitespace-pre-wrap"
+                className="text-3xl sm:text-4xl font-bold whitespace-pre-wrap"
               />
               <p className="text-xs  font-medium  mt-2 text-white/40">
                 {item.title}
@@ -184,9 +145,9 @@ export default function Quotes() {
         </div>
       </section>
       
-      <section className="container mt-20">
+      <section className="container mt-10 md:mt-14 lg:mt-20">
         <div className="text-center">
-          <h2 className="text-slate text-4xl font-bold">
+          <h2 className="text-slate text-2xl md:text-3xl lg:text-4xl font-bold">
             See the Difference We Make
           </h2>
           <p className="mt-4">
@@ -194,7 +155,7 @@ export default function Quotes() {
           </p>
         </div>
 
-        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((item) => (
             <div
               key={item.id}
@@ -222,65 +183,12 @@ export default function Quotes() {
           ))}
         </div>
       </section>
-      <section className="container mt-20">
-        <div className="text-center">
-          <h2 className="text-slate text-4xl font-bold">
-            What NYC Facility Managers Say
-          </h2>
-          <div className="mt-4">
-            {Array(5)
-              .fill()
-              .map((_, index) => (
-                <Icon
-                  key={index}
-                  icon="ic:round-star"
-                  width={20}
-                  height={20}
-                  className="inline-block red"
-                />
-              ))}
-          </div>
-          <p className="mt-0.5">4.9 out of 5 — based on 200+ reviews</p>
-        </div>
-
-        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {reviews.map((review) => (
-            <div
-              key={review.id}
-              className="relative rounded-[20px] shadow-lg p-6"
-            >
-              {Array(review.rating)
-                .fill()
-                .map((_, index) => (
-                  <Icon
-                    key={index}
-                    icon="ic:round-star"
-                    width={14}
-                    height={14}
-                    className="inline-block text-red"
-                  />
-                ))}
-              <p className="italic my-4">
-                {review.review}
-              </p>
-              <div className="flex items-center gap-3 pt-4 pb-10">
-                <div className="w-fit p-2 font-bold text-sm bg-slate rounded-full text-white">
-                  {review.image}
-                </div>
-                <div >
-                  <h5 className="font-bold text-sm">{review.name}</h5>
-                  <p className="text-xs text-slate font-medium font-jetbrains">{review.position}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="container my-20">
-        <h2 className="text-slate text-4xl font-bold text-center">
+      <ManagerReview/>
+      <section className="container my-10 md:my-14 lg:my-20">
+        <h2 className="text-slate text-2xl md:text-2xl lg:text-4xl font-bold text-center">
             We Also Handle
           </h2>
-          <div className=" grid grid-cols-1 md:grid-cols-5 gap-4 mt-8">
+          <div className=" grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
             {handles.map((item) => (
               <div
                 key={item.id}
