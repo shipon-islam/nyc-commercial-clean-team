@@ -82,7 +82,7 @@ export default async function Home() {
       <DynamicClientVoices feedbacks={feedbacks} />
       <DynamicMarqueHighlightText marqueeText="Making Every Corner Shine. Professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference. Making Every Corner Shine. Professional Cleaning You Can Trust! Your Space, Our Care. Experience the Clean Difference." />
       <DynamicFAQs />
-      <DiscountPopup/>
+      {/* <DiscountPopup/> */}
     </main>
   );
 }
