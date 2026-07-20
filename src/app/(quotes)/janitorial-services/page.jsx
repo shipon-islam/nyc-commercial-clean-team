@@ -1,10 +1,10 @@
 import ButtonSolid from "@/components/ButtonSolid";
 import Counter from "@/components/Counter";
+import ImageComparisonSlider from "@/components/ImageComparisonSlider";
 import ManagerReview from "@/components/quote/ManagerReview";
 import QuoteForm from "@/components/quote/QuoteForm";
 import { getFeedback } from "@/utility/getFeedback";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 const steps = [
   {
     id: 1,
@@ -35,17 +35,20 @@ const services = [
   {
     id: 1,
     title: "Break Room Deep Clean",
-    image: "/images/quotes/break-room.jpg",
+    beforeImage: "/images/quotes/janitorial/janitorial-after01.jpeg",
+    afterImage: "/images/quotes/janitorial/janitorial-before01.png",
   },
   {
     id: 2,
     title: "Lobby Entrance Floor",
-    image: "/images/quotes/lobby-entrance.jpg",
+    beforeImage: "/images/quotes/janitorial/janitorial-after01.jpeg",
+    afterImage: "/images/quotes/janitorial/janitorial-before01.png",
   },
   {
     id: 3,
     title: "Restroom Deep Clean",
-    image: "/images/quotes/restroom-deep.jpg",
+    beforeImage: "/images/quotes/janitorial/janitorial-after01.jpeg",
+    afterImage: "/images/quotes/janitorial/janitorial-before01.png",
   },
 ];
 
@@ -164,25 +167,13 @@ export default async function Quotes() {
 
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((item) => (
-            <div
-              key={item.id}
-              className="relative rounded-[20px] shadow-lg overflow-hidden"
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={400}
-                height={300}
-                className="w-full h-auto object-cover"
+            <div key={item.id}>
+              <ImageComparisonSlider
+                beforeImage={item.beforeImage}
+                afterImage={item.afterImage}
+                altBefore={`${item.title} before`}
+                altAfter={`${item.title} after`}
               />
-              <div className="flex justify-between items-start absolute top-5 left-0 w-full h-full px-4">
-                <span className="text-xs font-bold bg-black rounded-full text-white px-4 py-1.5 uppercase">
-                  before
-                </span>
-                <span className="text-xs font-bold bg-red rounded-full text-white px-4 py-1.5 uppercase">
-                  after
-                </span>
-              </div>
               <p className="text-sm  font-bold  py-6 text-center">
                 {item.title}
               </p>
