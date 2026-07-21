@@ -52,31 +52,84 @@ const services = [
   },
 ];
 
-const handles = [
+const careServices = [
   {
     id: 1,
-    icon: "hugeicons:office",
-    name: "Office Cleaning",
+    icon: "material-symbols:corporate-fare-outline",
+    title: "Office Cleaning",
+    description:
+      "Daily or weekly cleaning tailored to your corporate environment. We ensure a pristine workspace for your team.",
   },
   {
     id: 2,
-    icon: "ci:layer",
-    name: "Floor Care & Waxing",
+    icon: "material-symbols:cleaning-services-outline",
+    title: "Janitorial Services",
+    description:
+      "Comprehensive facility maintenance including trash removal, dusting, and surface sanitation for NYC buildings.",
   },
   {
     id: 3,
-    icon: "material-symbols:construction",
-    name: "Post-Construction",
+    icon: "material-symbols:person-celebrate-outline",
+    title: "Day Porter Services",
+    description:
+      "On-site staff to maintain high-traffic areas, restrooms, and lobbies throughout your business hours.",
   },
   {
     id: 4,
-    icon: "icon-park-outline:medical-box",
-    name: "Medical Facility",
+    icon: "material-symbols:construction-outline",
+    title: "Post-Construction",
+    description:
+      "Detailed debris and dust removal to make your newly renovated space ready for immediate occupancy.",
   },
   {
     id: 5,
-    icon: "material-symbols:storefront-outline",
-    name: "Retail & Storefront",
+    icon: "material-symbols:sanitizer-outline",
+    title: "Deep Disinfection",
+    description:
+      "Hospital-grade sanitation and deep cleaning protocols to ensure the highest safety standards for your facility.",
+    highlight: true,
+  },
+  {
+    id: 6,
+    icon: "material-symbols:event-outline",
+    title: "Move-Out & Event",
+    description:
+      "Pre and post-event cleanup or thorough move-out services to leave your space in perfect condition.",
+  },
+  {
+    id: 7,
+    icon: "material-symbols:layers-outline",
+    title: "Floor Stripping & Waxing",
+    description:
+      "Restore the shine to your hard floors with professional stripping, sealing, and high-gloss waxing services.",
+  },
+  {
+    id: 8,
+    icon: "material-symbols:texture-outline",
+    title: "Carpet Cleaning",
+    description:
+      "Deep steam cleaning and stain removal to extend the life of your commercial carpets and improve air quality.",
+  },
+  {
+    id: 9,
+    icon: "material-symbols:window-outline",
+    title: "Window Cleaning",
+    description:
+      "Streak-free interior and exterior window cleaning for a professional and bright business appearance.",
+  },
+  {
+    id: 10,
+    icon: "material-symbols:handyman-outline",
+    title: "Handyman Services",
+    description:
+      "Minor repairs, painting, and general maintenance to keep your facility running smoothly and looking its best.",
+  },
+  {
+    id: 11,
+    icon: "material-symbols:inventory-outline",
+    title: "Supply Management",
+    description:
+      "Automated restocking of paper products, soaps, and liners so you never run out of essential restroom supplies.",
   },
 ];
 export default async function Quotes() {
@@ -183,17 +236,50 @@ export default async function Quotes() {
       </section>
       <ManagerReview feedbacks={feedbacks} />
       <section className="container my-10 md:my-14 lg:my-20">
-        <h2 className="text-slate text-2xl md:text-2xl lg:text-4xl font-bold text-center">
-          We Also Handle
-        </h2>
-        <div className=" grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
-          {handles.map((item) => (
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-slate text-2xl md:text-2xl lg:text-4xl font-bold">
+            Professional Care and Services
+          </h2>
+          <p className="mt-4 text-light-blue max-w-2xl mx-auto">
+            Advancing Cleaning & Outsourced Staff Service through Skilled
+            Management. Cleaning Driving And Security Service
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {careServices.map((item) => (
             <div
               key={item.id}
-              className="relative rounded-xl bg-[#EDEEF0] p-4 text-slate flex flex-col items-center justify-center gap-2 text-center"
+              className={`p-8 rounded-xl border flex flex-col gap-4 ${
+                item.highlight
+                  ? "bg-slate border-slate shadow-lg"
+                  : "bg-white border-light-blue/30 shadow-sm"
+              }`}
             >
-              <Icon icon={item.icon} width={24} height={24} />
-              <h5 className="text-xs font-bold text-slate/80">{item.name}</h5>
+              <Icon
+                icon={item.icon}
+                width={40}
+                height={40}
+                className={item.highlight ? "text-white" : "text-slate"}
+              />
+              <h3
+                className={`text-xl font-bold ${item.highlight ? "text-white" : "text-slate"}`}
+              >
+                {item.title}
+              </h3>
+              <p
+                className={`text-sm flex-1 ${item.highlight ? "text-white/80" : "text-light-blue"}`}
+              >
+                {item.description}
+              </p>
+              <button
+                className={`mt-auto w-max px-6 py-2 rounded-full text-sm font-bold border transition-colors duration-300 ${
+                  item.highlight
+                    ? "bg-white text-slate border-white hover:bg-red hover:border-red hover:text-white"
+                    : "border-slate text-slate hover:bg-slate hover:text-white"
+                }`}
+              >
+                Book Now
+              </button>
             </div>
           ))}
         </div>
