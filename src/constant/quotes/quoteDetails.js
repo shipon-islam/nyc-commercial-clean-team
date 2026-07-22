@@ -355,8 +355,8 @@ export const quoteDetails = [
   },
   {
     id: 7,
-    pageName: "janitorial-services-nyc",
-    title: "commercial-cleaning-queens",
+    pageName: "commercial-cleaning-queens",
+    title: "Janitorial Services",
     subtitle: "Reliable Commercial Janitorial Service for NYC Facilities",
     desc: "NYC's most trusted commercial cleaning crews — tailored to your schedule.",
     list: [
