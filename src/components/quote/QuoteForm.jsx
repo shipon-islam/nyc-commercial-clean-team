@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 import InputBox from "../InputBox";
 import SelectBox from "../SelectBox";
 
-export default function QuoteForm() {
+export default function QuoteForm({pageName}) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const {
@@ -22,7 +22,7 @@ export default function QuoteForm() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      category: "janitorial-services",
+      category: pageName,
     },
     resolver: yupResolver(quoteYupSchema),
   });

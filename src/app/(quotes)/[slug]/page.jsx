@@ -3,20 +3,38 @@ import Counter from "@/components/Counter";
 import ImageComparisonSlider from "@/components/ImageComparisonSlider";
 import ManagerReview from "@/components/quote/ManagerReview";
 import QuoteForm from "@/components/quote/QuoteForm";
-import { quoteDetails } from "@/constant/quotes/quoteDetails";
 import { careServices } from "@/constant/quotes/quoteServices";
 import { getFeedback } from "@/utility/getFeedback";
+import { getPageBySlug } from "@/utility/getPages";
 import { Icon } from "@iconify/react";
-
-
+import { notFound } from "next/navigation";
 
 export default async function Quotes({ params }) {
   const { slug } = await params;
   const feedbacks = await getFeedback();
-  const pageDetail = quoteDetails.find((detail) => detail.pageName === slug);
+  const pageDetail = await getPageBySlug(slug);
+  if (!pageDetail) {
+    notFound();
+  }
+const imageUrl = `/api/uploads/page/${pageDetail?.bannerImage}`;
+
   return (
     <main>
-      <section className="relative mt-6 bg-[linear-gradient(to_right,rgba(29,47,100,0.9),rgba(29,47,100,0.4)),url('/images/quotes/quote.jpg')] bg-cover bg-center bg-no-repeat w-full h-300 md:h-260 lg:h-200 xl:h-250 ">
+      <section
+        style={{
+          backgroundImage: `linear-gradient(
+      to right,
+      rgba(29, 47, 100, 0.9),
+      rgba(29, 47, 100, 0.4)
+    ),
+    url('${imageUrl}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="relative mt-6  bg-cover bg-center bg-no-repeat w-full h-300 md:h-260 lg:h-200 xl:h-250 "
+      >
+        
         <div className="flex items-center w-full h-full absolute top-0 left-0">
           <div className="container grid lg:grid-cols-2 items-center gap-10 md:gap-15 xl:gap-25  text-white">
             <div>
@@ -24,21 +42,18 @@ export default async function Quotes({ params }) {
                 {pageDetail.title}
               </p>
               <h1 className="text-[23px] lg:text-5xl leading-[120%] font-medium my-6 md:my-8">
-                {pageDetail.subtitle}
+                {pageDetail.subTitle}
               </h1>
               <p className="text-base md:text-lg max-w-3xl mt-4">
-                {pageDetail.desc}
+                {pageDetail.shortDescription}
               </p>
               <div className="mt-6 md:mt-12">
                 <div className="grid grid-cols-2 items-start gap-4 md:w-4/5   gap-y-4 ">
-                  {pageDetail.list.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-2"
-                    >
+                  {pageDetail.features.map((item, index) => (
+                    <div key={index} className="flex items-start gap-2">
                       <Icon icon="ix:success" width={17} height={17} />{" "}
                       <span className="flex-1 relative -top-0.5 text-sm md:text-base">
-                        {item}
+                        {item.name}
                       </span>
                     </div>
                   ))}
@@ -49,21 +64,21 @@ export default async function Quotes({ params }) {
               </a>
             </div>
             <div>
-              <QuoteForm />
+              <QuoteForm pageName={slug} />
             </div>
           </div>
         </div>
       </section>
       <section className="bg-slate text-white">
         <div className="grid grid-cols-2 md:grid-cols-4 p-10">
-          {pageDetail.steps.map((item, id) => (
+          {pageDetail.stats.map((item, id) => (
             <div
               key={item.id}
-              className={` px-4 py-4 md:py-0 flex-col items-center justify-center text-center border-white/20  ${pageDetail.steps.length - 1 === id ? "" : " border-r border-b md:border-b-0"} ${pageDetail.steps.length - 2 === id ? "border-b-0" : " "} ${pageDetail.steps.length - 3 === id ? "border-r-0 md:border-r" : " "}`}
+              className={` px-4 py-4 md:py-0 flex-col items-center justify-center text-center border-white/20  ${pageDetail.stats.length - 1 === id ? "" : " border-r border-b md:border-b-0"} ${pageDetail.stats.length - 2 === id ? "border-b-0" : " "} ${pageDetail.stats.length - 3 === id ? "border-r-0 md:border-r" : " "}`}
             >
               <Counter
-                value={item.score}
-                sign={item.sign}
+                value={item.number}
+                sign={item.suffix}
                 className="text-3xl sm:text-4xl font-bold whitespace-pre-wrap"
               />
               <p className="text-xs  font-medium  mt-2 text-white/40">
@@ -85,11 +100,11 @@ export default async function Quotes({ params }) {
         </div>
 
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {pageDetail.services.map((item) => (
+          {pageDetail.facilities.map((item) => (
             <div key={item.id}>
               <ImageComparisonSlider
-                beforeImage={item.beforeImage}
-                afterImage={item.afterImage}
+                beforeImage={`/api/uploads/page/${item.beforeImage}`}
+                afterImage={`/api/uploads/page/${item.afterImage}`}
                 altBefore={`${item.title} before`}
                 altAfter={`${item.title} after`}
               />

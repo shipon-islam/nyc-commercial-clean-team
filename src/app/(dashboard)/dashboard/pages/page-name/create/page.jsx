@@ -1,10 +1,11 @@
 "use client";
+import PageNameForm from "@/components/dashboard/pages/PageNameForm";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useEffect, useState, useTransition } from "react";
 import toast from "react-hot-toast";
-export default function Quotes() {
-  const [quotes, setQuotes] = useState([]);
+export default function PageNameCreate() {
+  const [pageNames, setPageNames] = useState([]);
   const [page, setPage] = useState(1);
   const [isPending, startTransition] = useTransition();
   const [statusVal, setStatusVal] = useState("all");
@@ -14,11 +15,11 @@ export default function Quotes() {
 
   const fetchQuotes = async (currentPage, currentStatusVal) => {
     const res = await fetch(
-      `/api/quote?page=${currentPage}&limit=${limit}&status=${currentStatusVal}`,
+      `/api/pages/page-name?page=${currentPage}&limit=${limit}&status=${currentStatusVal}`,
     );
     const result = await res.json();
     if (result.success) {
-      setQuotes(result.data);
+      setPageNames(result.data);
       setTotalPages(result.pagination.totalPages);
     }
   };
@@ -28,14 +29,14 @@ export default function Quotes() {
     if (!userConfirmed) return;
 
     try {
-      const response = await fetch(`/api/quote/${id}`, {
+      const response = await fetch(`/api/pages/page-name/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       setIsRefresh(!isRefresh);
-      toast.success("Quote deleted successfully!");
+      toast.success("Page Name deleted successfully!");
     } catch (error) {
       toast.error(error.message);
       console.error("There was a problem with the delete operation:", error);
@@ -48,8 +49,11 @@ export default function Quotes() {
   }, [page, statusVal, isRefresh]);
 
   return (
+    <div>
+      <PageNameForm/>
     <div className="mt-8">
-      {quotes.length <= 0 ? (
+      <h1 className="text-2xl font-bold mb-4">Page name list</h1>
+      {pageNames.length <= 0 ? (
         <div className="w-fit mx-auto text-center">
           <Image
             src="/images/dashboard/empty.png"
@@ -69,48 +73,36 @@ export default function Quotes() {
                 <tr className="bg-slate text-slate-300 text-left">
                   <th className="px-4 py-5">ID</th>
                   <th className="px-2 py-5">NAME</th>
-                  <th className="px-2 py-5">EMAIL</th>
-                  <th className="px-2 py-5 ">PHONE</th>
-                  <th className="px-2 py-5">FACILITY</th>
-                  <th className="px-2 py-5">CATEGORY</th>
+                  <th className="px-2 py-5">Slug</th>
                   <th className="px-2 py-5">ACTION</th>
                 </tr>
               </thead>
 
               <tbody>
-                {quotes?.map((quote, index) => (
+                {pageNames?.map((pageName, index) => (
                   <tr
-                    key={quote._id}
+                    key={pageName._id}
                     className="bg-slate text-slate-400 border-t text-sm"
                   >
                     <td className="px-4 py-2.5 lg:min-w-40">
-                      NYC-{quote._id.slice(-6).toUpperCase()}
+                      NYC-{pageName._id.slice(-6).toUpperCase()}
                     </td>
                     <td className="px-2 py-2.5 lg:min-w-40 flex flex-col">
                       <span className="text-slate-200 capitalize">
-                        {quote.fullName}
+                        {pageName.name}
                       </span>
                      
                     </td>
                     <td className="px-2 py-2.5 lg:min-w-40 max-w-70">
                       <span className="text-slate-200">
-                        {quote.email}
+                        {pageName.slug}
                       </span>
                     </td>
-                    <td className="px-2 py-2.5 lg:min-w-40 ">
-                    {quote.phone}
-                   
-                    </td>
-                    <td className="px-2 py-2.5 lg:min-w-40 ">
-                      {quote.facilityType}
-                    </td>
-                    <td className="px-2 py-2.5 lg:min-w-40">
-                      {quote.category}
-                    </td>
+                    
                     
                     <td className="px-2 py-2">
                       <div className="flex items-center gap-x-2">
-                        <button onClick={() => handleDelete(quote._id)} className="cursor-pointer hover:text-red-500 hover:border-red-500">
+                        <button onClick={() => handleDelete(pageName._id)} className="cursor-pointer hover:text-red-500 hover:border-red-500">
                           <Icon
                             icon="mingcute:delete-2-line"
                             width="20"
@@ -160,6 +152,7 @@ export default function Quotes() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }

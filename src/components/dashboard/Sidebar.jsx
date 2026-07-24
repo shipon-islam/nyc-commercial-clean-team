@@ -61,6 +61,14 @@ const Sidebar = () => {
           </Link>
           <Link
             onClick={() => setIsSidebar(false)}
+            href="/dashboard/pages"
+            className="flex items-center gap-2 py-2 px-4 rounded-md hover:bg-deepBlue "
+          >
+            <Icon icon="wordpress:page" width="25" height="25" className="text-white!"/>
+            <span>Pages</span>
+          </Link>
+          <Link
+            onClick={() => setIsSidebar(false)}
             href="/dashboard/users"
             className="flex items-center gap-2 py-2 px-4 rounded-md hover:bg-deepBlue "
           >

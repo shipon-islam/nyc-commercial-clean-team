@@ -1,10 +1,17 @@
 "use client";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState, useTransition } from "react";
 import toast from "react-hot-toast";
+const statusList = [
+  { color: "bg-gray-400", name: "All" },
+  { color: "bg-orange-500", name: "Pending" },
+  { color: "bg-green-500", name: "Confirmed" },
+  { color: "bg-red-500", name: "Cencelled" },
+];
 export default function Quotes() {
-  const [quotes, setQuotes] = useState([]);
+  const [pages, setPages] = useState([]);
   const [page, setPage] = useState(1);
   const [isPending, startTransition] = useTransition();
   const [statusVal, setStatusVal] = useState("all");
@@ -14,11 +21,11 @@ export default function Quotes() {
 
   const fetchQuotes = async (currentPage, currentStatusVal) => {
     const res = await fetch(
-      `/api/quote?page=${currentPage}&limit=${limit}&status=${currentStatusVal}`,
+      `/api/pages?page=${currentPage}&limit=${limit}&status=${currentStatusVal}`,
     );
     const result = await res.json();
     if (result.success) {
-      setQuotes(result.data);
+      setPages(result.data);
       setTotalPages(result.pagination.totalPages);
     }
   };
@@ -28,14 +35,14 @@ export default function Quotes() {
     if (!userConfirmed) return;
 
     try {
-      const response = await fetch(`/api/quote/${id}`, {
+      const response = await fetch(`/api/pages/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       setIsRefresh(!isRefresh);
-      toast.success("Quote deleted successfully!");
+      toast.success("Pages deleted successfully!");
     } catch (error) {
       toast.error(error.message);
       console.error("There was a problem with the delete operation:", error);
@@ -48,8 +55,29 @@ export default function Quotes() {
   }, [page, statusVal, isRefresh]);
 
   return (
+    <div>
+        <div className="flex justify-between mt-8">
+        <h1 className="text-2xl font-bold">Page list</h1>
+        <div className="flex gap-2">
+            <Link
+          className="border-slate border text-slate px-4 py-2 rounded-xl"
+          href="/dashboard/pages/page-name/create"
+        >
+          {" "}
+          Create page name
+        </Link>
+        <Link
+          className="bg-slate text-white px-4 py-2 rounded-xl"
+          href="/dashboard/pages/create"
+        >
+          {" "}
+          Create page
+        </Link>
+        </div>
+      </div>
+    
     <div className="mt-8">
-      {quotes.length <= 0 ? (
+      {pages.length <= 0 ? (
         <div className="w-fit mx-auto text-center">
           <Image
             src="/images/dashboard/empty.png"
@@ -68,55 +96,50 @@ export default function Quotes() {
               <thead className="">
                 <tr className="bg-slate text-slate-300 text-left">
                   <th className="px-4 py-5">ID</th>
-                  <th className="px-2 py-5">NAME</th>
-                  <th className="px-2 py-5">EMAIL</th>
-                  <th className="px-2 py-5 ">PHONE</th>
-                  <th className="px-2 py-5">FACILITY</th>
-                  <th className="px-2 py-5">CATEGORY</th>
+                  <th className="px-2 py-5">PageName</th>
+                  <th className="px-2 py-5">Title</th>
                   <th className="px-2 py-5">ACTION</th>
                 </tr>
               </thead>
 
               <tbody>
-                {quotes?.map((quote, index) => (
+                {pages?.map((item, index) => (
                   <tr
-                    key={quote._id}
+                    key={item._id}
                     className="bg-slate text-slate-400 border-t text-sm"
                   >
                     <td className="px-4 py-2.5 lg:min-w-40">
-                      NYC-{quote._id.slice(-6).toUpperCase()}
+                      NYC-{item._id.slice(-6).toUpperCase()}
                     </td>
                     <td className="px-2 py-2.5 lg:min-w-40 flex flex-col">
                       <span className="text-slate-200 capitalize">
-                        {quote.fullName}
+                        {item.pageName}
                       </span>
                      
                     </td>
                     <td className="px-2 py-2.5 lg:min-w-40 max-w-70">
                       <span className="text-slate-200">
-                        {quote.email}
+                        {item.title}
                       </span>
                     </td>
-                    <td className="px-2 py-2.5 lg:min-w-40 ">
-                    {quote.phone}
-                   
-                    </td>
-                    <td className="px-2 py-2.5 lg:min-w-40 ">
-                      {quote.facilityType}
-                    </td>
-                    <td className="px-2 py-2.5 lg:min-w-40">
-                      {quote.category}
-                    </td>
+                    
                     
                     <td className="px-2 py-2">
                       <div className="flex items-center gap-x-2">
-                        <button onClick={() => handleDelete(quote._id)} className="cursor-pointer hover:text-red-500 hover:border-red-500">
+                        <button onClick={() => handleDelete(item._id)} className="cursor-pointer hover:text-red-500 hover:border-red-500">
                           <Icon
                             icon="mingcute:delete-2-line"
                             width="20"
                             height="20"
                           />
                         </button>
+                        <Link href={`/dashboard/pages/edit/${item._id}`}  className="cursor-pointer hover:text-red-500 hover:border-red-500">
+                          <Icon
+                            icon="material-symbols:edit-outline-rounded"
+                            width="20"
+                            height="20"
+                          />
+                        </Link>
                       </div>
                     </td>
                   </tr>
@@ -160,6 +183,7 @@ export default function Quotes() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
